@@ -1,6 +1,6 @@
 "use strict";
 
-const User = use("User");
+const User = use("App/Models/User");
 const Hash = use("Hash");
 
 class AuthController {
@@ -9,10 +9,28 @@ class AuthController {
       await auth.check();
       return response.redirect("/");
     } catch (error) {
-      return view.render("pages.auth.index");
+      return view.render("login");
     }
 
     return view.render("pages.auth.index");
+  }
+
+  async token({ auth, request, response }) {
+    const email = request.input("email");
+    const password = request.input("password");
+
+    if (!email || !password) {
+      return response.send({
+        status: "error",
+        message: "email and password required"
+      });
+    }
+
+    try {
+      return await auth.authenticator("jwt").attempt(email, password);
+    } catch (e) {
+      return { status: "error", message: e.message };
+    }
   }
 
   async login({ request, response, auth, session }) {
@@ -21,11 +39,14 @@ class AuthController {
 
     try {
       await auth.remember(true).attempt(email, password);
-      return response.redirect("/");
+      //return response.redirect("/");
+      return response.send({ status: "success", data: user });
     } catch (e) {
       console.log(e.message);
+      return { status: "error", message: e.message };
+
       session.flash({ type: "danger", message: "Invalid email or password" });
-      return response.redirect("/login");
+      //   return response.redirect("/login");
     }
   }
 
@@ -50,10 +71,10 @@ class AuthController {
     const date_of_birth = request.input("date_of_birth");
     const marital_status = request.input("marital_status");
     const gender = request.input("gender");
-    const contact_address = request.input("contact_address");
+    const address = request.input("address");
     const l_g_a = request.input("l_g_a");
     const state = request.input("state");
-    const status = request.input("status") || 1; // status is optional, default is 1
+    //const status = request.input("status") || 1; // status is optional, default is 1
     const phone = request.input("phone");
     //const role_id = await UserHelper.getUserRoleId(user_type) || 3 // if no user type is provided, default to normal user
 
@@ -67,7 +88,7 @@ class AuthController {
       !date_of_birth ||
       !marital_status ||
       !gender ||
-      !contact_address ||
+      !address ||
       !l_g_a ||
       !state
     ) {
@@ -123,10 +144,9 @@ class AuthController {
     user.date_of_birth = date_of_birth;
     user.marital_status = marital_status;
     user.gender = gender;
-    user.contact_address = contact_address;
+    user.address = address;
     user.l_g_a = l_g_a;
     user.state = state;
-    user.status = status;
 
     if (phone !== undefined && phone !== null) {
       user.phone = phone;
