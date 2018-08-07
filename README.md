@@ -1,31 +1,36 @@
-# Adonis fullstack application
+# RepayNG
 
-This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
+source code for repay.ng's dashboard application
 
-1. Bodyparser
-2. Session
-3. Authentication
-4. Web security middleware
-5. CORS
-6. Edge template engine
-7. Lucid ORM
-8. Migrations and seeds
+# How to Setup
 
-## Setup
+First, clone the project repository to your system
 
-Use the adonis command to install the blueprint
-
-```bash
-adonis new yardstick
+```
+https://github.com/eazzyLEE/RepayNG.git
 ```
 
-or manually clone the repo and then run `npm install`.
+Then cd into the project folder
 
+```
+cd RepayNG
+```
+Then run
 
-### Migrations
+```
+npm install
+```
 
-Run the following command to run startup migrations.
+Ensure your db settings are correct in the ```.env``` file
 
-```js
+Then run migrations
+
+```
 adonis migration:run
 ```
+and 
+```
+adonis seed
+```
+
+
