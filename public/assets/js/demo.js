@@ -636,34 +636,19 @@ demo = {
 
             var $validator = $("#wizardForm").validate({
     		  rules: {
-    		    email: {
-                    required: true,
-                    email: true,
-                    minlength: 5
-    		    },
-    		    first_name: {
-    		        required: false,
-                    minlength: 5
-    		    },
-    		    last_name: {
-    		        required: false,
-                    minlength: 5
-    		    },
-    		    website: {
-    		        required: true,
-                    minlength: 5,
-                    url: true
-    		    },
-    		    framework: {
-        		    required: false,
-        		    minlength: 4
-    		    },
-    		    cities: {
-        		    required: true
-    		    },
-    		    price:{
-        		    number: true
-    		    }
+    		    // email: {
+            //         required: true,
+            //         email: true,
+            //         minlength: 5
+    		    // },
+    		    // first_name: {
+    		    //     required: false,
+            //         minlength: 0
+    		    // },
+    		    // last_name: {
+    		    //     required: false,
+            //         minlength: 3
+    		    // }
     		  }
     		});
 
@@ -673,11 +658,11 @@ demo = {
             	nextSelector: '.btn-next',
                 previousSelector: '.btn-back',
             	onNext: function(tab, navigation, index) {
-            		var $valid = $('#wizardForm').valid();
+            		 var $valid = $('#wizardForm').valid();
 
             		if(!$valid) {
             			$validator.focusInvalid();
-            			return false;
+            			return true;
             		}
             	},
                 onInit : function(tab, navigation, index){
@@ -686,13 +671,13 @@ demo = {
                     var $total = navigation.find('li').length;
                     $width = 100/$total;
 
-                    $display_width = $(document).width();
+                    // $display_width = $(document).width();
 
-                    if($display_width < 600 && $total > 3){
-                       $width = 50;
-                    }
+                    // if($display_width < 600 && $total > 3){
+                    //    $width = 80;
+                    // }
 
-                    navigation.find('li').css('width',$width + '%');
+                    // navigation.find('li').css('width',$width + '%');
                 },
                 onTabClick : function(tab, navigation, index){
                     // Disable the posibility to click on tabs
@@ -705,7 +690,7 @@ demo = {
                     var wizard = navigation.closest('.card-wizard');
 
                     // If it's the last tab then hide the last button and show the finish instead
-                    if($current >= $total) {
+                    if($current >= 6) {
                         $(wizard).find('.btn-next').hide();
                         $(wizard).find('.btn-finish').show();
                     } else if($current == 1){

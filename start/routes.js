@@ -15,10 +15,11 @@
 
 const Route = use("Route");
 
-Route.get("/login", "AuthController.index").as("login");
+Route.get("/", "AuthController.index").as("login");
 Route.post("/login", "AuthController.login");
 Route.get("/logout", "AuthController.logout").as("logout");
 Route.post("/user/register", "AuthController.register");
 Route.get("/register", "UserController.index").as("register");
 
-Route.on("/").render("login");
+
+// Route.on("/").render("login");

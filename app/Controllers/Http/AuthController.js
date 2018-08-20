@@ -43,7 +43,8 @@ class AuthController {
       return response.send({ status: "success", data: user });
     } catch (e) {
       console.log(e.message);
-      return { status: "error", message: e.message };
+      response.send(e.message);
+      // return { status: "error", message: e.message };
 
       session.flash({ type: "danger", message: "Invalid email or password" });
       //   return response.redirect("/login");

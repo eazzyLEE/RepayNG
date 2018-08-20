@@ -5,7 +5,8 @@ class UserController {
 
     /** rendering view */
     return view.render('pages.register')
-}
+  }
+  
 }
 
 module.exports = UserController
