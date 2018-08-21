@@ -39,15 +39,12 @@ class AuthController {
 
     try {
       await auth.remember(true).attempt(email, password);
-      //return response.redirect("/");
-      return response.send({ status: "success", data: user });
+      return response.redirect("/");
     } catch (e) {
-      console.log(e.message);
-      response.send(e.message);
-      // return { status: "error", message: e.message };
 
+      response.send(e.message);
       session.flash({ type: "danger", message: "Invalid email or password" });
-      //   return response.redirect("/login");
+      return response.redirect("/");
     }
   }
 
