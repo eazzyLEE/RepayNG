@@ -55,6 +55,9 @@
                                     <li class="active"><a class="fs-14 bold" href="#">Login</a></li>
                                     <li><a class="fs-14 text-muted bold" href="{{ route('register') }}">Register</a></li>
                                 </ul>
+                                @if(old('message'))
+                                    @!component('components.alert', type =old('type'), message=old('message'))
+                                @endif
                                 <br />
                                 <div class="form-group m-t-10">
                                     <label class="bold">Username</label>
