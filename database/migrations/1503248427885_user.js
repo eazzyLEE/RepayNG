@@ -7,14 +7,8 @@ class UserSchema extends Schema {
     this.dropIfExists("users");
     this.create("users", table => {
       table.increments();
-      table
-        .string("username", 80)
-        .notNullable()
-        .unique();
-      table
-        .string("email", 254)
-        .notNullable()
-        .unique();
+      table.string("username", 80).notNullable().unique();
+      table.string("email", 254).notNullable().unique();
       table.string("password", 60).notNullable();
       table.string("phone", 80).notNullable();
       table.string("title").notNullable();
@@ -23,7 +17,7 @@ class UserSchema extends Schema {
       table.integer("date_of_birth").notNullable();
       table.string("marital_status").notNullable();
       table.string("gender").notNullable();
-      table.string("l_g_a").notNullable();
+      table.string("lga").notNullable();
       table.string("address", 180).notNullable();
       table.string("state").notNullable();
       table.timestamps();

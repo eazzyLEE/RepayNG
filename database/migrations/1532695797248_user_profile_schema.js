@@ -6,15 +6,8 @@ class UserProfileSchema extends Schema {
   up() {
     this.create("user_profiles", table => {
       table.increments();
-      table
-        .integer("user_id")
-        .unsigned()
-        .notNullable();
-      table
-        .foreign("user_id")
-        .references("id")
-        .on("users")
-        .onDelete("cascade");
+      table.integer("user_id").unsigned().notNullable();
+      table.foreign("user_id").references("id").on("users").onDelete("cascade");
       table.string("title").notNullable();
       table.string("first_name").notNullable();
       table.string("last_name").notNullable();

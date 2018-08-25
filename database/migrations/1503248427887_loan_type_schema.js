@@ -6,10 +6,7 @@ class LoanTypeSchema extends Schema {
   up () {
     this.create('loan_types', (table) => {
       table.increments()
-      table
-        .string("loan_type", 30)
-        .notNullable()
-        .defaultTo('');
+      table.string("loan_type", 30).notNullable().defaultTo('');
       table.timestamps()
     })
   }

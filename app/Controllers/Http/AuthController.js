@@ -81,7 +81,7 @@ class AuthController {
       !password ||
       !username ||
       !title ||
-      !first_name 
+      !first_name ||
       !last_name ||
       !date_of_birth ||
       !marital_status ||

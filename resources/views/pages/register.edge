@@ -429,8 +429,8 @@
 
     // Step One Variables
     let title = $("#title").val(),
-        first_name = $("#firstname").val(),
-        last_name = $("#lastname").val(),
+        first_name = $("#first_name").val(),
+        last_name = $("#last_name").val(),
         day = $("#day").val(),
         month = $("#month").val(),
         year = $("#year").val(),
@@ -445,7 +445,7 @@
     function validateStepOne() {
       return true
     }
-
+    
     // Step Two variables
     let email = $("#email").val(),
       password = $("#password").val(),
@@ -475,26 +475,32 @@
     }
 
     function registerUser(){
-      alert(title)
+      alert(firstname)
+      console.log(email)
       if (validateStepOne() && validateStepTwo() && validateStepThree() && validateStepFour()) {
 
         axios.post('/user/register', {
-            first_name,
-            last_name,
-            title,
-            status,
-            gender,
-            address,
-            lga,
-            state,
-            phone,
-            email,
-            password,
-            bvn,
-            card_number,
-            ccv,
-            pin,
+            title: $("#title").val(),
+            first_name: $("#firstname").val(),
+            last_name: $("#lastname").val(),
+            day: $("#day").val(),
+            month: $("#month").val(),
+            year: $("#year").val(),
+            status: $("#status").val(),
+            gender: $("#gender").val(),
+            address: $("#address").val(),
+            lga: $("#lga").val(),
+            state: $("#state").val(),
+            phone: $("#phone").val(),
+            email: $("#email").val(),
+            password: $("#password").val(),
+            account_number: $("#account_number").val(),
+            bvn: $("#bvn").val(),
+            card_number: $("#card_number").val(),
+            ccv: $("#ccv").val(),
+            pin: $("#pin").val(),
             date_of_birth: '21-3-1975',
+            
           })
           .then(function (response) {
             if (response.data.status == 'error' ) {
