@@ -67,27 +67,27 @@ class AuthController {
     const first_name = request.input("first_name");
     const last_name = request.input("last_name");
     const date_of_birth = request.input("date_of_birth");
-    const marital_status = request.input("marital_status");
+    const marital_status = request.input("status");
     const gender = request.input("gender");
     const address = request.input("address");
-    const l_g_a = request.input("l_g_a");
+    const lga = request.input("lga");
     const state = request.input("state");
     //const status = request.input("status") || 1; // status is optional, default is 1
     const phone = request.input("phone");
     //const role_id = await UserHelper.getUserRoleId(user_type) || 3 // if no user type is provided, default to normal user
-
+    console.log(request)
     if (
       !email ||
       !password ||
       !username ||
       !title ||
-      !first_name ||
+      !first_name 
       !last_name ||
       !date_of_birth ||
       !marital_status ||
       !gender ||
       !address ||
-      !l_g_a ||
+      !lga ||
       !state
     ) {
       return response.send({
@@ -95,7 +95,7 @@ class AuthController {
         message: "Some fields are missing"
       });
     }
-
+    console.log(email)
     // check for valid email
     if (!/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.exec(email)) {
       return response.send({
