@@ -42,9 +42,8 @@ class AuthController {
       return response.redirect("/");
     } catch (e) {
 
-      response.send(e.message);
       session.flash({ type: "danger", message: "Invalid email or password" });
-      return response.redirect("/");
+      return response.redirect("/dashboard");
     }
   }
 
@@ -132,9 +131,9 @@ class AuthController {
 
     // create a new user
     const user = new User();
-
+    console.log(password)
     user.username = username;
-    user.password = await Hash.make(password);
+    user.password = password;
     user.email = email;
     user.title = title;
     user.first_name = first_name;
