@@ -62,7 +62,7 @@ class AuthController {
   async register({ request, response }) {
     const email = request.input("email");
     const password = request.input("password");
-    const username = request.input("username");
+    const username = request.input("username") || email;
     const title = request.input("title");
     const first_name = request.input("first_name");
     const last_name = request.input("last_name");
@@ -79,7 +79,7 @@ class AuthController {
     if (
       !email ||
       !password ||
-      !username ||
+      // !username ||
       !title ||
       !first_name ||
       !last_name ||
@@ -143,7 +143,7 @@ class AuthController {
     user.marital_status = marital_status;
     user.gender = gender;
     user.address = address;
-    user.l_g_a = l_g_a;
+    user.lga = lga;
     user.state = state;
 
     if (phone !== undefined && phone !== null) {
