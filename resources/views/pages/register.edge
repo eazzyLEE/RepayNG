@@ -60,14 +60,12 @@
                 <div class="form-group m-t-10">
                   <input type="text" id="first_name" name="first_name" class="form-control bordered" placeholder="First Name" required/>
                   <i class="form-group__bar"></i>
-                  <span class="help-block text-danger">First Name is required</span>
                 </div>
               </div>
               <div class="col-sm-5">
                 <div class="form-group m-t-10">
                   <input type="text" id="last_name" name="last_name" class="form-control bordered" placeholder="Last Name" required/>
                   <i class="form-group__bar"></i>
-                  <span class="help-block text-danger">Last Name is required</span>
                 </div>
               </div>
               <div class="col-sm-12">
@@ -109,7 +107,6 @@
                     <option>30</option>
                     <option>31</option>
                   </select>
-                  <span class="help-block text-danger">Day of Birth is required</span>
                 </div>
               </div>
               <div class="col-sm-4">
@@ -129,14 +126,12 @@
                     <option value="11">November</option>
                     <option value="12">December</option>
                   </select>
-                  <span class="help-block text-danger">Month is required</span>
                 </div>
               </div>
               <div class="col-sm-4">
                 <div class="form-group m-t-10">
                   <input type="number" id="year" name="year" class="form-control bg-dark" placeholder="Year" required/>
                   <i class="form-group__bar"></i>
-                  <span class="help-block text-danger">Year is required</span>
                 </div>
               </div>
               <div class="col-sm-12">
@@ -152,7 +147,6 @@
                     <option>Married</option>
                     <option>Complicated</option>
                   </select>
-                  <span class="help-block text-danger">Marital status is required</span>
                 </div>
               </div>
               <div class="col-sm-6">
@@ -162,7 +156,6 @@
                     <option>Male</option>
                     <option>Female</option>
                   </select>
-                  <span class="help-block text-danger">Gender is required</span>
                 </div>
               </div>
             </div>
@@ -174,7 +167,6 @@
                 <div class="form-group m-t-10">
                   <input type="text" id="address" class="form-control bordered" placeholder="Street Address" required/>
                   <i class="form-group__bar"></i>
-                  <span class="help-block text-danger">Street Address is required</span>
                 </div>
               </div>
               <div class="col-sm-7">
@@ -196,7 +188,6 @@
                   <input type="number" name="phone" id="phone" class="form-control bordered" placeholder="Phone Number" required/>
                   <i class="form-group__bar"></i>
                   <span class="help-block text-dark">Kindly add (+234) before your phone number</span>
-                  <span class="help-block text-danger">Phone Number is required</span>
                 </div>
               </div>
             </div>
@@ -205,7 +196,6 @@
                 <button id="step_one_button" class="btn btn-block wizard-next bg-success fs-14 bold">Continue<i class="fa fa-long-arrow-right right fs-14"></i></button>
               </div>
             </div>
-
           </div>
 
           <div id="login" class="wizard-step tab-pane container-fluid fade">
@@ -217,14 +207,12 @@
                 <div class="form-group m-t-10">
                   <input type="email" id="email" name="email" class="form-control bordered" placeholder="Email Address" required/>
                   <i class="form-group__bar"></i>
-                  <span class="help-block text-danger">Card Number is required</span>
                 </div>
               </div>
               <div class="col-sm-12">
                 <div class="form-group m-t-10">
                   <input type="password" id="password" name="password" class="form-control bordered" placeholder="Password" required/>
                   <i class="form-group__bar"></i>
-                  <span class="help-block text-danger">Password must contain at least a capital letter, a number and a symbol</span>
                 </div>
               </div>
               <div class="col-sm-12">
@@ -388,117 +376,6 @@
 
 @section('scripts')
   @super
-  <script>
-    $(function () {
-      $("#wizardForm").simpleWizard({
-        cssClassStepActive: "active",
-        cssClassStepDone: "done",
-        onFinish: function() {
-          alert("Wizard finished")
-        }
-      });
-    });
-
-    // Validate Step One
-    $("#step_one_button").click(function() {
-
-      let title = $("#title").val(),
-          first_name = $("#first_name").val(),
-          last_name = $("#last_name").val(),
-          day = $("#day").val(),
-          month = $("#month").val(),
-          year = $("#year").val(),
-          status = $("#status").val(),
-          gender = $("#gender").val(),
-          address = $("#address").val(),
-          lga = $("#lga").val(),
-          state = $("#state").val(),
-          phone = $("#phone").val();
-
-      $("#step_one_button").removeClass('wizard-next');
-      if (first_name.length) { // add all validation
-        $("#step_one_button").addClass('wizard-next');
-        $("this").click();
-      }
-    });
-
-    // Validate step 2
-    $("#step_two_button").click(function() {
-
-    let email = $("#email").val(),
-      password = $("#password").val(),
-      password2 = $("#password2").val();
-
-      $("#step_two_button").removeClass('wizard-next');
-      if (true) { // add all validation
-        $("#step_two_button").addClass('wizard-next');
-        $("this").click();
-      }
-    });
-
-    // Validate step 3
-    $("#step_three_button").click(function() {
-
-    let account_number = $("#account_number").val(),
-        bvn = $("#bvn").val(),
-        card_number = $("#card_number").val(),
-        ccv = $("#ccv").val(),
-        pin = $("#pin").val(),
-        pin2 = $("#pin2").val();
-
-      $("#step_three_button").removeClass('wizard-next');
-      if (true) { // add all validation
-        $("#step_three_button").addClass('wizard-next');
-        $("this").click();
-      }
-    });
-
-    // Validate step 4
-    $("#step_four_button").click(function(event) {
-        event.preventDefault();
-        $("#step_four_button").removeClass('wizard-next');
-        if (true) { // add all validation
-          registerUser(this)
-        }
-    });
-
-    function registerUser(event){
-        axios.post('/user/register', {
-            title: $("#title").val(),
-            first_name: $("#first_name").val(),
-            last_name: $("#last_name").val(),
-            day: $("#day").val(),
-            month: $("#month").val(),
-            year: $("#year").val(),
-            status: $("#status").val(),
-            gender: $("#gender").val(),
-            address: $("#address").val(),
-            lga: $("#lga").val(),
-            state: $("#state").val(),
-            phone: $("#phone").val(),
-            email: $("#email").val(),
-            password: $("#password").val(),
-            account_number: $("#account_number").val(),
-            bvn: $("#bvn").val(),
-            card_number: $("#card_number").val(),
-            ccv: $("#ccv").val(),
-            pin: $("#pin").val(),
-            date_of_birth: '21-3-1975',
-          })
-          .then(function (response) {
-            if (response.data.status == 'error' ) {
-              alert(response.data.message)
-              return false;
-            } else {
-              $("#step_four_button").addClass('wizard-next');
-              var wizard = $('#wizardForm').bootstrapWizard();
-              wizard.bootstrapWizard('next')
-            }
-          })
-          .catch(function (error) {
-            console.log(error)
-          });
-    }
-
-  </script>
+  {{ script('assets/js/register.js') }}
+  {{ script('assets/js/jquery.validate.min.js') }}
 @endsection
