@@ -20,6 +20,7 @@ Route.post("/login", "AuthController.login");
 Route.get("/logout", "AuthController.logout").as("logout");
 Route.post("/user/register", "AuthController.register");
 Route.get("/register", "UserController.index").as("register");
+Route.get("/dashboard", "DashboardController.index");
 
 
 // Route.on("/").render("login");
