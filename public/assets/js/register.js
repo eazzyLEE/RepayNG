@@ -1179,12 +1179,24 @@ var validator = $("#wizardForm").validate({
   // Validate step 2
   $("#step_two_button").click(function() {
 
-  let email = $("#email").val(),
-    password = $("#password").val(),
-    password2 = $("#password2").val();
+    let step_two_fields = [
+      "#email",
+      "#password",
+      "#password2"
+    ];
+
+    let isValid = false;
+
+    for (id of step_two_fields) {
+      isValid = validator.element( id )
+      if (!isValid) {
+          // when one input is not valid, no need to continue looping...
+          break;
+      }
+    }
 
     $("#step_two_button").removeClass('wizard-next');
-    if (true) { // add all validation
+    if (isValid) { // add all validation
       $("#step_two_button").addClass('wizard-next');
       $("this").click();
     }
