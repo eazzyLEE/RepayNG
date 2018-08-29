@@ -39,19 +39,21 @@ class AuthController {
     const password = request.input("password");
 
     try {
-      await auth.remember(true).attempt(email, password);
-      return response.redirect("/");
-    } catch (e) {
+      const user = await auth.remember(true).attempt(email, password);
 
-      session.flash({ type: "danger", message: "Invalid email or password" });
+      session.put("logged_in_user", user.toJSON() )
       return response.redirect("/dashboard");
+    } catch (e) {
+      console.log(e.message)
+      session.flash({ type: "danger", message: "Invalid email or password" });
+      return response.redirect("/");
     }
   }
 
   async logout({ auth, response }) {
     await auth.logout();
 
-    return response.redirect("/login");
+    return response.redirect("/");
   }
   /**
    * Register a user
