@@ -1123,6 +1123,9 @@ var validator = $("#wizardForm").validate({
       email: {
         email: true
       },
+      password2: {
+        equalTo: "#password"
+      },
       status: "required",
       title: "required"
     },
@@ -1136,6 +1139,9 @@ var validator = $("#wizardForm").validate({
       password: {
           requied: "Please enter your password",
           password: "Password must contain at least a capital letter, a number and a symbol"
+      },
+      password2: {
+        equalTo: "Password do not match"
       }
     }
 });
