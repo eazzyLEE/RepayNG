@@ -2,6 +2,7 @@
 
 const User = use("App/Models/User");
 const Hash = use("Hash");
+const BankRegistration = use("App/Models/BankRegistration")
 
 class AuthController {
   async index({ view, auth, response }) {
@@ -71,10 +72,16 @@ class AuthController {
     const address = request.input("address");
     const lga = request.input("lga");
     const state = request.input("state");
+
+    const bank = request.input("bank")
+    const account_number = request.input("account_number")
+    const bvn = request.input("bvn")
+    const card_number = request.input("card_number")
+    const ccv = request.input("ccv")
+    const pin = request.input("pin")
     //const status = request.input("status") || 1; // status is optional, default is 1
     const phone = request.input("phone");
     //const role_id = await UserHelper.getUserRoleId(user_type) || 3 // if no user type is provided, default to normal user
-    console.log(request)
     if (
       !email ||
       !password ||
@@ -94,7 +101,7 @@ class AuthController {
         message: "Some fields are missing"
       });
     }
-    console.log(email)
+
     // check for valid email
     if (!/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.exec(email)) {
       return response.send({
@@ -131,7 +138,6 @@ class AuthController {
 
     // create a new user
     const user = new User();
-    console.log(password)
     user.username = username;
     user.password = password;
     user.email = email;
@@ -150,6 +156,18 @@ class AuthController {
     }
 
     await user.save();
+
+    // save bank record...
+    // BankRegistration.create({
+    //   bank_id: 'bank_id',
+    //   account_number,
+    //   account_name: "account_name",
+    //   bvn,
+    //   card_number,
+    //   ccv,
+    //   pin,
+    // });
+
     //await user.roles().attach([role_id])
 
     if (user) {

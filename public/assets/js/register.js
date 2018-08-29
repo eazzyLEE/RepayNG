@@ -1173,7 +1173,7 @@ var validator = $("#wizardForm").validate({
         card_number: $("#card_number").val(),
         ccv: $("#ccv").val(),
         pin: $("#pin").val(),
-        date_of_birth: '21-3-1975',
+        date_of_birth: `${$("#day").val()}-${$("#month").val()}-${$("#year").val()}`,
       })
       .then(function (response) {
         if (response.data.status == 'error' ) {
