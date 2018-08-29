@@ -1150,6 +1150,50 @@ var validator = $("#wizardForm").validate({
     }
 });
 
+  function registerUser(event){
+    $("#step_four_button").prop("disabled", true)
+    axios.post('/user/register', {
+        title: $("#title").val(),
+        first_name: $("#first_name").val(),
+        last_name: $("#last_name").val(),
+        day: $("#day").val(),
+        month: $("#month").val(),
+        year: $("#year").val(),
+        status: $("#status").val(),
+        gender: $("#gender").val(),
+        address: $("#address").val(),
+        lga: $("#lga").val(),
+        state: $("#state").val(),
+        phone: $("#phone").val(),
+        email: $("#email").val(),
+        password: $("#password").val(),
+        bank: $('input[name=bank]:checked').val(),
+        account_number: $("#account_number").val(),
+        bvn: $("#bvn").val(),
+        card_number: $("#card_number").val(),
+        ccv: $("#ccv").val(),
+        pin: $("#pin").val(),
+        date_of_birth: '21-3-1975',
+      })
+      .then(function (response) {
+        if (response.data.status == 'error' ) {
+          alert(response.data.message)
+          $("#step_four_button").prop("disabled", false)
+          return false;
+        } else {
+          $("#step_four_button").addClass('wizard-next');
+          $("#step_four_button").prop("disabled", false)
+          var wizard = $('#wizardForm').bootstrapWizard();
+          wizard.bootstrapWizard('next')
+        }
+      })
+      .catch(function (error) {
+        console.log(error)
+        $("#step_four_button").prop("disabled", false)
+      });
+  }
+
+
   // Validate Step One
   $("#step_one_button").click(function() {
 
@@ -1224,56 +1268,29 @@ var validator = $("#wizardForm").validate({
 
   // Validate step 4
   $("#step_four_button").click(function(event) {
-    let account_number = $("#account_number").val(),
-    bvn = $("#bvn").val(),
-    card_number = $("#card_number").val(),
-    ccv = $("#ccv").val(),
-    pin = $("#pin").val(),
-    pin2 = $("#pin2").val();
 
+    let step_four_fields = [
+      "#account_number",
+      "#bvn",
+      "#card_number",
+      "#ccv",
+      "#pin",
+      "#pin2"
+    ];
+
+    let isValid = false;
+
+    for (id of step_four_fields) {
+      isValid = validator.element( id )
+      if (!isValid) {
+          // when one input is not valid, no need to continue looping...
+          break;
+      }
+    }
       event.preventDefault();
       $("#step_four_button").removeClass('wizard-next');
-      if (true) { // add all validation
+      if (isValid) { 
         registerUser(this)
       }
   });
-
-  function registerUser(event){
-      axios.post('/user/register', {
-          title: $("#title").val(),
-          first_name: $("#first_name").val(),
-          last_name: $("#last_name").val(),
-          day: $("#day").val(),
-          month: $("#month").val(),
-          year: $("#year").val(),
-          status: $("#status").val(),
-          gender: $("#gender").val(),
-          address: $("#address").val(),
-          lga: $("#lga").val(),
-          state: $("#state").val(),
-          phone: $("#phone").val(),
-          email: $("#email").val(),
-          password: $("#password").val(),
-          bank: $('input[name=bank]:checked').val(),
-          account_number: $("#account_number").val(),
-          bvn: $("#bvn").val(),
-          card_number: $("#card_number").val(),
-          ccv: $("#ccv").val(),
-          pin: $("#pin").val(),
-          date_of_birth: '21-3-1975',
-        })
-        .then(function (response) {
-          if (response.data.status == 'error' ) {
-            alert(response.data.message)
-            return false;
-          } else {
-            $("#step_four_button").addClass('wizard-next');
-            var wizard = $('#wizardForm').bootstrapWizard();
-            wizard.bootstrapWizard('next')
-          }
-        })
-        .catch(function (error) {
-          console.log(error)
-        });
-  }
 
