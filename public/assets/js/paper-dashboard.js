@@ -24,6 +24,22 @@ var mobile_menu_visible = 0,
 
 (function(){
     isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
+    $('.sidebar').hover(function(){
+        var sidebar = $('.profile').hasClass('hidden');
+        var mini = $('body').hasClass('sidebar-mini');
+        if($('.sidebar').width() == 260 && !sidebar)
+        {
+            $('.profile').addClass('hidden');
+        }
+        else if($('.sidebar').width() == 80 && sidebar)
+        {
+            $('.profile').removeClass('hidden');
+        }
+        else if(!mini)
+        {
+            $('.profile').removeClass('hidden');
+        }
+    });
 
     if (isWindows){
        // if we are on windows OS we activate the perfectScrollbar function
@@ -43,6 +59,7 @@ $(document).ready(function(){
     $('.modal').appendTo("body");
 
     if($('body').hasClass('sidebar-mini')){
+        $('.profile').addClass('hidden');
         pdp.misc.sidebar_mini_active = true;
     }
 
@@ -131,11 +148,13 @@ pdp = {
 
             if(pdp.misc.sidebar_mini_active == true){
                 $('body').removeClass('sidebar-mini');
+                $('.profile').removeClass('hidden');
                 $btn.html('<i class="ti-more-alt"></i>');
                 pdp.misc.sidebar_mini_active = false;
 
             }else{
                 $('body').addClass('sidebar-mini');
+                $('.profile').addClass('hidden');
                 $btn.html('<i class="ti-menu-alt"></i>');
                 pdp.misc.sidebar_mini_active = true;
             }
@@ -187,6 +206,7 @@ pdp = {
             mobile_menu_initialized = true;
         } else {
             if($(window).width() > 991){
+                $('.profile').removeClass('hidden');
                 // reset all the additions that we made for the sidebar wrapper only if the screen is bigger than 991px
                 $sidebar_wrapper.find('.navbar-form').remove();
                 $sidebar_wrapper.find('.nav-mobile-menu').remove();
