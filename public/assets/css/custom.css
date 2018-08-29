@@ -26,6 +26,9 @@
 .h-30 {
   height: 30vh !important;
 }
+.bold {
+  font-weight: 500 !important;
+}
 .bg-white {
   background-color: #fff;
 }
@@ -34,6 +37,12 @@
 }
 .bg-black * {
   color: #ffffff !important;
+}
+.bg-transparent {
+  background-color: transparent !important;
+}
+.bg-transparent * {
+  color: #000 !important;
 }
 .bg-indigo,
 .btn-indigo,
@@ -46,11 +55,17 @@
 .badge-indigo * {
   color: #ffffff !important;
 }
+.text-indigo {
+  color: rgb(59, 120, 231) !important;
+}
 .badge-indigo {
   font-size: 9px !important;
   position: relative;
   top: -5px;
   left: -3px;
+}
+.padding-20 {
+  padding: 20px !important;
 }
 .b-b {
   border-bottom: 1px solid #999;
@@ -67,6 +82,12 @@
 .fs-30 {
   font-size: 30px !important;
 }
+.fs-50 {
+  font-size: 50px !important;
+}
+.fs-70 {
+  font-size: 70px !important;
+}
 .fs-100 {
   font-size: 100px !important;
 }
@@ -79,6 +100,9 @@
 .no-shadow {
   box-shadow: none !important;
 }
+.text-white {
+  color: #fff !important;
+}
 .mb-50 {
   margin-bottom: 50px !important;
 }
@@ -90,6 +114,9 @@
 }
 .mt-20 {
   margin-top: 20px !important;
+}
+.pl-10 {
+  padding-left: 10px !important;
 }
 .nav-link {
   background-color: transparent !important;
@@ -134,9 +161,12 @@ select {
 select#inputState {
   padding-left: 10px;
 }
+.btn-group .btn {
+  margin-right: 10px;
+}
 /* login css */
 .login-bg {
-  background: url("../img/background/background-6.jpg") 50% 50% no-repeat;
+  background: url("../img/background/background-2.jpg") 50% 50% no-repeat;
   background-position: center;
   background-size: cover;
   background-blend-mode: multiply;
@@ -195,7 +225,7 @@ select#inputState {
 /* Register */
 .register-header {
   height: 45vh;
-  background: url("../img/background/background-9.jpg") 50% 50% no-repeat;
+  background: url("../img/background/background-3.jpg") 50% 50% no-repeat;
   background-position: center;
   background-size: cover;
   background-blend-mode: multiply;
@@ -235,7 +265,7 @@ select#inputState {
   margin-right: 20px !important;
   font-size: 16px !important;
 }
-.register .circle {
+.circle {
   box-shadow: 1px 2px 50px #999;
   border-radius: 100% !important;
   padding: 30px;
@@ -248,9 +278,12 @@ select#inputState {
 /* sidebasr */
 .sidebar {
   box-shadow: 1px 1px 5px #eee !important;
+  padding-top: 20px !important;
 }
 .sidebar-wrapper {
-  margin-top: 10vh !important;
+  padding-top: 10vh !important;
+  height: 100vh !important;
+  padding-bottom: 100px !important;
 }
 .sidebar-wrapper .profile {
   margin-bottom: 7vh !important;
@@ -290,6 +323,13 @@ select#inputState {
 .input-group-addon {
   border: 0px solid !important;
 }
+.table-search {
+  width: 100rem !important;
+}
+.table-search,
+.input-group-addon {
+  border: 0px solid !important;
+}
 
 /* Dasboard */
 .nav-center {
@@ -305,6 +345,7 @@ select#inputState {
 .sidebar ul.nav li a i {
   font-size: 18px !important;
 }
+.sidebar ul.nav li.active,
 .sidebar ul.nav li a:hover,
 .sidebar ul.nav li a:focus {
   background-color: #1b5e20;
@@ -326,6 +367,7 @@ select#inputState {
   width: 150px !important;
   height: 150px !important;
   margin-bottom: -20px !important;
+  z-index: 9999;
 }
 #dashboard .card-body h5 {
   font-weight: 700 !important;
@@ -349,4 +391,38 @@ label > input + img{ /* IMAGE STYLES */
 
 label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
   border:2px solid #f00;
+}
+.padded-table {
+  border-collapse: separate;
+  border-spacing: 0px 10px;
+  position: absolute !important;
+  top: 10px !important;
+  width: 95% !important;
+}
+.content-header-bg {
+  margin: -30px -16px 0px -15px;
+  width: 102.5% !important;
+  height: 35vh !important;
+  background: url("../img/background/background-5.png") 50% 100% no-repeat;
+  background-blend-mode: multiply;
+  background-color: #666;
+  background-size: cover;
+}
+.content-header {
+  margin: -30px -16px 0px -15px;
+  width: 102.5% !important;
+  height: 150px !important;
+}
+.table-img {
+  height: 40px !important;
+  padding: 0px !important;
+  margin: -15px !important;
+  padding-left: 10px !important;
+}
+.card-specialloan {
+  border-radius: 7px !important;
+}
+.referrals {
+  margin-top: 12px !important;
+  margin-bottom: 12px !important;
 }

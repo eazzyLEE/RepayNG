@@ -1127,7 +1127,8 @@ var validator = $("#wizardForm").validate({
         equalTo: "#password"
       },
       status: "required",
-      title: "required"
+      title: "required",
+      bank: "required"
     },
     messages: {
       first_name: "Please specify your first name",
@@ -1142,6 +1143,9 @@ var validator = $("#wizardForm").validate({
       },
       password2: {
         equalTo: "Password do not match"
+      },
+      bank: {
+        requied: "Please select a bank"
       }
     }
 });
@@ -1202,7 +1206,7 @@ var validator = $("#wizardForm").validate({
     }
 
     $("#step_two_button").removeClass('wizard-next');
-    if (isValid) { // add all validation
+    if (isValid) {
       $("#step_two_button").addClass('wizard-next');
       $("this").click();
     }
@@ -1210,16 +1214,9 @@ var validator = $("#wizardForm").validate({
 
   // Validate step 3
   $("#step_three_button").click(function() {
-
-  let account_number = $("#account_number").val(),
-      bvn = $("#bvn").val(),
-      card_number = $("#card_number").val(),
-      ccv = $("#ccv").val(),
-      pin = $("#pin").val(),
-      pin2 = $("#pin2").val();
-
+    
     $("#step_three_button").removeClass('wizard-next');
-    if (true) { // add all validation
+    if ( validator.element("input[name='bank']") ) {
       $("#step_three_button").addClass('wizard-next');
       $("this").click();
     }
@@ -1227,6 +1224,13 @@ var validator = $("#wizardForm").validate({
 
   // Validate step 4
   $("#step_four_button").click(function(event) {
+    let account_number = $("#account_number").val(),
+    bvn = $("#bvn").val(),
+    card_number = $("#card_number").val(),
+    ccv = $("#ccv").val(),
+    pin = $("#pin").val(),
+    pin2 = $("#pin2").val();
+
       event.preventDefault();
       $("#step_four_button").removeClass('wizard-next');
       if (true) { // add all validation
@@ -1250,6 +1254,7 @@ var validator = $("#wizardForm").validate({
           phone: $("#phone").val(),
           email: $("#email").val(),
           password: $("#password").val(),
+          bank: $('input[name=bank]:checked').val(),
           account_number: $("#account_number").val(),
           bvn: $("#bvn").val(),
           card_number: $("#card_number").val(),
