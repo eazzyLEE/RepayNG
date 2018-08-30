@@ -14,7 +14,7 @@ class UserSchema extends Schema {
       table.string("title").notNullable();
       table.string("first_name").notNullable();
       table.string("last_name").notNullable();
-      table.integer("date_of_birth").notNullable();
+      table.date("date_of_birth").notNullable();
       table.string("marital_status").notNullable();
       table.string("gender").notNullable();
       table.string("lga").notNullable();
