@@ -15,14 +15,20 @@
 
 const Route = use("Route");
 
-Route.get("/login", "AuthController.index");
+//Route.get("/login", "AuthController.index");
+Route.get("/login", ({ view }) => view.render("login")).as("login");
 Route.post("/login", "AuthController.login");
-Route.get("/register", ({view}) => view.render('pages.register') );
-Route.post("/register", "AuthController.register").as("register");
+Route.get("/register", ({ view }) => view.render("pages.register"));
+Route.post("/user/register", "AuthController.register").as("register");
 
 Route.group(() => {
-    Route.get("/logout", "AuthController.logout").as("logout");
-    Route.get("/", "DashboardController.index");
-    Route.get("/dashboard", "DashboardController.index");
-})
-.middleware(["protect"]);
+  Route.get("/logout", "AuthController.logout").as("logout");
+  Route.get("/", "DashboardController.index");
+  Route.get("/dashboard", "DashboardController.index");
+  Route.get("/loans", "LoanHistoryController.index").as("loans");
+  Route.get("/special-loans", "SpecialLoanController.index").as("special");
+  Route.get("/referrals", "ReferralController.index").as("referrals");
+  Route.get("/banks", "BankController.index").as("manage-banks");
+  Route.get("/new-loan", "LoanTypeController.index");
+  //Route.get("/new-loan", "CardController.index").as("manage-cards");
+}).middleware(["protect"]);

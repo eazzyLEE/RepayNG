@@ -40,7 +40,7 @@
                                     <a class="nav-link" href="#">Support</a>
                                 </li>
                                 <li class="nav-item bg-indigo">
-                                    <a class="nav-link" href="#">Login</a>
+                                    <a class="nav-link"  href="{{ route('login') }}">Login</a>
                                 </li>
                             </ul>
                         </div>
@@ -52,7 +52,7 @@
                             <form method="POST" action="/login" class="login" role="form" enctype="multipart/form-data">
                                 
                                 <ul class="nav nav-pills">
-                                    <li class="active"><a class="fs-14 bold" href="#">Login</a></li>
+                                    <li class="active"><a class="fs-14 bold" href="{{ route('login') }}">Login</a></li>
                                     <li><a class="fs-14 text-muted bold" href="{{ route('register') }}">Register</a></li>
                                 </ul>
                                 @if(old('message'))
