@@ -20,6 +20,8 @@ Route.get("/login", ({ view }) => view.render("login")).as("login");
 Route.post("/login", "AuthController.login");
 Route.get("/register", ({ view }) => view.render("pages.register"));
 Route.post("/user/register", "AuthController.register").as("register");
+//Route.get("/edit", ({ view }) => view.render("pages.user.edit"));
+Route.get("/user-edit/:user_id", "AuthController.edit").as("edit_user");
 
 Route.group(() => {
   Route.get("/logout", "AuthController.logout").as("logout");
@@ -30,5 +32,8 @@ Route.group(() => {
   Route.get("/referrals", "ReferralController.index").as("referrals");
   Route.get("/banks", "BankController.index").as("manage-banks");
   Route.get("/new-loan", "LoanTypeController.index");
+
+  Route.post("/user/update", "AuthController.update");
+
   //Route.get("/new-loan", "CardController.index").as("manage-cards");
 }).middleware(["protect"]);

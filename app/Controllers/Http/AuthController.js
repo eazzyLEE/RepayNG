@@ -2,7 +2,7 @@
 
 const User = use("App/Models/User");
 const Hash = use("Hash");
-const BankRegistration = use("App/Models/BankRegistration")
+const Bank = use("App/Models/BankRegistration");
 
 class AuthController {
   async index({ view, auth, response }) {
@@ -41,10 +41,10 @@ class AuthController {
     try {
       const user = await auth.remember(true).attempt(email, password);
 
-      session.put("logged_in_user", user.toJSON() )
+      session.put("logged_in_user", user.toJSON());
       return response.redirect("/dashboard");
     } catch (e) {
-      console.log(e.message)
+      console.log(e.message);
       session.flash({ type: "danger", message: "Invalid email or password" });
       return response.redirect("/");
     }
@@ -75,12 +75,12 @@ class AuthController {
     const lga = request.input("lga");
     const state = request.input("state");
 
-    const bank = request.input("bank")
-    const account_number = request.input("account_number")
-    const bvn = request.input("bvn")
-    const card_number = request.input("card_number")
-    const ccv = request.input("ccv")
-    const pin = request.input("pin")
+    const bank = request.input("bank");
+    const account_number = request.input("account_number");
+    const bvn = request.input("bvn");
+    const card_number = request.input("card_number");
+    const ccv = request.input("ccv");
+    const pin = request.input("pin");
     //const status = request.input("status") || 1; // status is optional, default is 1
     const phone = request.input("phone");
     //const role_id = await UserHelper.getUserRoleId(user_type) || 3 // if no user type is provided, default to normal user
@@ -157,8 +157,18 @@ class AuthController {
       user.phone = phone;
     }
 
+    const banks = new Bank();
+    banks.bank = bank;
+    banks.account_number = account_number;
+    banks.account_name = account_name;
+    banks.bvn = bvn;
+    banks.card_number = card_number;
+    banks.ccv = ccv;
+    banks.pin = pin;
+
     await user.save();
 
+    await banks.save();
     // save bank record...
     // BankRegistration.create({
     //   bank_id: 'bank_id',
@@ -172,7 +182,7 @@ class AuthController {
 
     //await user.roles().attach([role_id])
 
-    if (user) {
+    if (user && bank) {
       return response.send({
         status: "success",
         message: "User created successfully"
@@ -180,6 +190,21 @@ class AuthController {
     }
 
     response.send({ status: "error", message: "Failed to create user" });
+  }
+
+  async edit({ request, response, view, params, session }) {
+    const user_id = params.user_id;
+
+    const user = await User.find(user_id);
+
+    if (user) {
+      return view.render("pages.user.edit", { user: user.toJSON() });
+    }
+
+    // flash error
+    session.flash({ type: "info", message: "User not found" });
+
+    return response.redirect("/dashboard");
   }
 
   /**
@@ -197,7 +222,7 @@ class AuthController {
     const date_of_birth = request.input("date_of_birth");
     const marital_status = request.input("marital_status");
     const gender = request.input("gender");
-    const contact_address = request.input("contact_address");
+    const address = request.input("address");
     const l_g_a = request.input("l_g_a");
     const state = request.input("state");
     const profile_image = request.input("profile_image");
@@ -251,6 +276,9 @@ class AuthController {
     if (profile_image) {
       user.profile_image = profile_image;
     }
+    if (address) {
+      user.address = address;
+    }
 
     await user.save();
 
@@ -265,7 +293,8 @@ class AuthController {
     //     }
     // }
 
-    return response.send({ status: "success", data: user });
+    response.send({ status: "success", data: user });
+    return response.redirect("/dashboard");
   }
 }
 
