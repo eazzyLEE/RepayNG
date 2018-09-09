@@ -53,7 +53,7 @@
                                 
                                 <ul class="nav nav-pills">
                                     <li class="active"><a class="fs-14 bold" href="{{ route('login') }}">Login</a></li>
-                                    <li><a class="fs-14 text-muted bold" href="{{ route('register') }}">Register</a></li>
+                                    <li><a class="fs-14 text-muted bold" href="/register">Register</a></li>
                                 </ul>
                                 @if(old('message'))
                                     @!component('components.alert', type =old('type'), message=old('message'))
