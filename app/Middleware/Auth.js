@@ -7,8 +7,6 @@ class Auth {
       await auth.check();
       await next();
     } catch (error) {
-      console.log(error.message);
-      session.flash({ type: "danger", message: "You must log in first :)" });
       return response.redirect("/login");
     }
   }
