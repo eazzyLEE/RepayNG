@@ -40,9 +40,10 @@ class AuthController {
 
     try {
       const user = await auth.remember(true).attempt(email, password);
-
+      
       session.put("logged_in_user", user.toJSON());
       return response.redirect("/dashboard");
+      
     } catch (e) {
       console.log(e.message);
       session.flash({ type: "danger", message: "Invalid email or password" });
@@ -61,7 +62,7 @@ class AuthController {
    * @param view View
    * @param response Resonse
    */
-  async register({ request, response }) {
+  async register({ request, response, session }) {
     const email = request.input("email");
     const password = request.input("password");
     const username = request.input("username") || email;
@@ -160,7 +161,6 @@ class AuthController {
     const banks = new Bank();
     banks.bank = bank;
     banks.account_number = account_number;
-    banks.account_name = account_name;
     banks.bvn = bvn;
     banks.card_number = card_number;
     banks.ccv = ccv;
@@ -183,10 +183,13 @@ class AuthController {
     //await user.roles().attach([role_id])
 
     if (user && bank) {
-      return response.send({
-        status: "success",
-        message: "User created successfully"
-      });
+      // return response.send({
+      //   status: "success",
+      //   message: "User created successfully"
+      session.put("logged_in_user", user.toJSON());
+      return response.redirect("/dashboard");
+      ;
+
     }
 
     response.send({ status: "error", message: "Failed to create user" });

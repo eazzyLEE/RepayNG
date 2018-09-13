@@ -24,10 +24,7 @@ class BankRegistrationSchema extends Schema {
         .references("id")
         .on("users")
         .onDelete("cascade");
-      table
-        .integer("bank")
-        .unsigned()
-        .notNullable();
+      table.string("bank").notNullable();
       table
         .integer("account_number")
         .unsigned()

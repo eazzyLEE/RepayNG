@@ -35,6 +35,10 @@ class User extends Model {
   profile() {
     return this.hasOne("App/Models/UserProfile");
   }
+
+  bankregistrations() {
+    return this.hasMany("App/Models/BankRegistration");
+  }
 }
 
 module.exports = User;
