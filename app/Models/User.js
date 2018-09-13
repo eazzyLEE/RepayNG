@@ -36,8 +36,8 @@ class User extends Model {
     return this.hasOne("App/Models/UserProfile");
   }
 
-  profile() {
-    return this.hasOne("App/Models/UserProfile");
+  bankAccounts() {
+    return this.hasMany("App/Models/BankRegistration");
   }
 }
 

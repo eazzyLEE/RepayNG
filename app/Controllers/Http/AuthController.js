@@ -68,7 +68,7 @@ class AuthController {
    * @param view View
    * @param response Resonse
    */
-  async register({ request, response }) {
+  async register({ request, response, session }) {
     const email = request.input("email");
     const password = request.input("password");
     const username = request.input("username") || email;
@@ -103,7 +103,8 @@ class AuthController {
       !gender ||
       !address ||
       !lga ||
-      !state
+      !state ||
+      !phone
     ) {
       return response.send({
         status: "error",
@@ -145,11 +146,6 @@ class AuthController {
       });
     }
 
-    // make sure phone record is provided
-    if (phone !== undefined && phone !== null) {
-      user.phone = phone;
-    }
-
     // create a new user
     const user = new User();
     user.username = username;
@@ -164,40 +160,24 @@ class AuthController {
     user.address = address;
     user.lga = lga;
     user.state = state;
-
-    const banks = new Bank();
-    banks.bank = bank;
-    banks.account_number = account_number;
-    banks.account_name = account_name;
-    banks.bvn = bvn;
-    banks.card_number = card_number;
-    banks.ccv = ccv;
-    banks.pin = pin;
-
+    user.phone = phone;
     await user.save();
 
-    await banks.save();
-    // save bank record...
-    // BankRegistration.create({
-    //   bank_id: 'bank_id',
-    //   account_number,
-    //   account_name: "account_name",
-    //   bvn,
-    //   card_number,
-    //   ccv,
-    //   pin,
-    // });
+    user.bankAccounts().create({
+      bank_id: bank,
+      account_number,
+      bank_verification_number: bvn
+      // card_number,
+      // ccv,
+      // pin
+    });
 
-    //await user.roles().attach([role_id])
-
-    if (user && bank) {
-      return response.send({
-        status: "success",
-        message: "User created successfully"
-      });
+    if (user) {
+      session.put("logged_in_user", user.toJSON());
+      return response.redirect("/dashboard");
     }
 
-    response.send({ status: "error", message: "Failed to create user" });
+    return response.send({ status: "error", message: "Failed to create user" });
   }
 
   async edit({ request, response, view, params, session }) {
