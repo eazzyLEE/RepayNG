@@ -3,6 +3,7 @@
 const User = use("App/Models/User");
 const Hash = use("Hash");
 const Bank = use("App/Models/BankRegistration");
+const Banks = use("App/Models/Bank");
 
 class AuthController {
   async index({ view, auth, response }) {
@@ -54,6 +55,12 @@ class AuthController {
     await auth.logout();
 
     return response.redirect("/");
+  }
+
+  async register_view({ view }) {
+    const banks = await Banks.all();
+
+    return view.render("pages.register", { banks: banks.toJSON() });
   }
   /**
    * Register a user
@@ -138,6 +145,11 @@ class AuthController {
       });
     }
 
+    // make sure phone record is provided
+    if (phone !== undefined && phone !== null) {
+      user.phone = phone;
+    }
+
     // create a new user
     const user = new User();
     user.username = username;
@@ -152,10 +164,6 @@ class AuthController {
     user.address = address;
     user.lga = lga;
     user.state = state;
-
-    if (phone !== undefined && phone !== null) {
-      user.phone = phone;
-    }
 
     const banks = new Bank();
     banks.bank = bank;

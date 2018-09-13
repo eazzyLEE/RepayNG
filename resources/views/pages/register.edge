@@ -237,50 +237,14 @@
               <div class="col-sm-12" align="center">
                 <h2 class="bold">Select Your Bank</h2>
               </div>
-              <div class="col-sm-3">
-                <label>
-                  <input id="citibank" type="radio" name="bank" value="med" />
-                  <img src="assets/img/banks/citibank.jpeg" class="img-responsive"/>
-                </label>
-              </div>
-              <div class="col-sm-3">
-                <label>
-                  <input id="fidelity" type="radio" name="bank" value="med" />
-                  <img src="assets/img/banks/fidelity.png" class="img-responsive"/>
-                </label>
-              </div>
-              <div class="col-sm-3">
-                <label>
-                  <input id="uba" type="radio" name="bank" value="uba" />
-                  <img src="assets/img/banks/uba.jpeg" class="img-responsive"/>
-                </label>
-              </div>
-              <div class="col-sm-3">
-                <label>
-                  <input id="gtb" type="radio" name="bank" value="gtb" />
-                  <img src="assets/img/banks/gtb.png" class="img-responsive"/>
-                </label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-3">
-                <label>
-                  <input id="union" type="radio" name="bank" value="union" />
-                  <img src="assets/img/banks/union.png" class="img-responsive"/>
-                </label>
-              </div>
-              <div class="col-sm-3">
-                <label>
-                  <input id="wema" type="radio" name="bank" value="wema" />
-                  <img src="assets/img/banks/wema.jpeg" class="img-responsive"/>
-                </label>
-              </div>
-              <div class="col-sm-3">
-                <label>
-                  <input id="heritage" type="radio" name="bank" value="heritage" />
-                  <img src="assets/img/banks/heritage.png" class="img-responsive"/>
-                </label>
-              </div>
+              @each(bank in banks)
+                <div class="col-sm-3">
+                  <label>
+                  <input id="{{bank.bank}}" type="radio" name="bank" value="{{bank.id}}" />
+                    <img src="assets/img/banks/{{bank.bank}}.jpeg" class="img-responsive"/>
+                  </label>
+                </div>
+              @endeach
             </div>
             <div class="row" align="center">
               <div class="col-sm-5">

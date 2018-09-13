@@ -35,6 +35,10 @@ class User extends Model {
   profile() {
     return this.hasOne("App/Models/UserProfile");
   }
+
+  profile() {
+    return this.hasOne("App/Models/UserProfile");
+  }
 }
 
 module.exports = User;

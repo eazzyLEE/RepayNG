@@ -18,7 +18,7 @@ const Route = use("Route");
 //Route.get("/login", "AuthController.index");
 Route.get("/login", ({ view }) => view.render("login")).as("login");
 Route.post("/login", "AuthController.login");
-Route.get("/register", ({ view }) => view.render("pages.register"));
+Route.get("/register", "AuthController.register_view");
 Route.post("/user/register", "AuthController.register").as("register");
 //Route.get("/edit", ({ view }) => view.render("pages.user.edit"));
 Route.get("/user-edit/:user_id", "AuthController.edit").as("edit_user");
