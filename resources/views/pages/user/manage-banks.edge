@@ -144,7 +144,7 @@
 	                <div class="row">
                         <div class="col-sm-12 content-header-bg">
                             <div class="col-sm-6">
-                                <h4 class="text-white">Hello there, Jessica</h4>
+                            <h4 class="text-white">Hello there, {{ user.first_name}}</h4>
                                 <p class="fs-14 no-padding text-white">Oh so, your weak rhyme You doubt I'll bother, reading into it I'll probably won't, left to my own devices.
                                     <br /><br /><button class="btn-md btn bg-indigo">Add a new Bank Account</button>
                                 </p>
@@ -163,14 +163,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @each(bank in banks)
                                     <tr class="card">
                                         <div>
                                             <td>
-                                                <img src="assets/img/banks/gtb.png" class="table-img" />
+                                                <img src="assets/img/banks/{{bank.bank_id}}.png" class="table-img" />
                                             </td>
-                                            <td>#12345</td>
+                                            <td>{{bank.account_number}}</td>
                                             <td>Isreal Bankole Adejumo</td>
-                                            <td>#56889298</td>
+                                            <td>{{bank.bvn}}</td>
                                             <td>Dollars</td>
                                             <td class="dropdown">
                                                 <a href="#notifications" class="dropdown-toggle btn-rotate" data-toggle="dropdown">
@@ -184,72 +185,13 @@
                                             </td>
                                         </div>
                                     </tr>
-                                    <tr class="card">
-                                        <div>
-                                            <td>
-                                                <img src="assets/img/banks/fidelity.png" class="table-img" />
-                                            </td>
-                                            <td>#12345</td>
-                                            <td>Isreal Bankole Adejumo</td>
-                                            <td>#56889298</td>
-                                            <td>Dollars</td>
-                                            <td class="dropdown">
-                                                <a href="#notifications" class="dropdown-toggle btn-rotate" data-toggle="dropdown">
-                                                    <i class="ti-more"></i>
-                                                </a>
-                                                <ul style="margin-left: -100px" class="dropdown-menu">
-                                                    <li><a href="#not1">Open</a></li>
-                                                    <li><a href="#not2">Mark Multiple</a></li>
-                                                    <li><a href="#not2">Close Windows</a></li>
-                                                </ul>
-                                            </td>
-                                        </div>
-                                    </tr>
-                                    <tr class="card">
-                                        <div>
-                                            <td>
-                                                <img src="assets/img/banks/uba.jpeg" class="table-img" />
-                                            </td>
-                                            <td>#12345</td>
-                                            <td>Isreal Bankole Adejumo</td>
-                                            <td>#56889298</td>
-                                            <td>Dollars</td>
-                                            <td class="dropdown">
-                                                <a href="#notifications" class="dropdown-toggle btn-rotate" data-toggle="dropdown">
-                                                    <i class="ti-more"></i>
-                                                </a>
-                                                <ul style="margin-left: -100px" class="dropdown-menu">
-                                                    <li><a href="#not1">Open</a></li>
-                                                    <li><a href="#not2">Mark Multiple</a></li>
-                                                    <li><a href="#not2">Close Windows</a></li>
-                                                </ul>
-                                            </td>
-                                        </div>
-                                    </tr>
-                                    <tr class="card">
-                                        <div>
-                                            <td>
-                                                <img src="assets/img/banks/fidelity.png" class="table-img" />
-                                            </td>
-                                            <td>#12345</td>
-                                            <td>Isreal Bankole Adejumo</td>
-                                            <td>#56889298</td>
-                                            <td>Dollars</td>
-                                            <td class="dropdown">
-                                                <a href="#notifications" class="dropdown-toggle btn-rotate" data-toggle="dropdown">
-                                                    <i class="ti-more"></i>
-                                                </a>
-                                                <ul style="margin-left: -100px" class="dropdown-menu">
-                                                    <li><a href="#not1">Open</a></li>
-                                                    <li><a href="#not2">Mark Multiple</a></li>
-                                                    <li><a href="#not2">Close Windows</a></li>
-                                                </ul>
-                                            </td>
-                                        </div>
-                                    </tr>
+                                    @endeach
                                 </tbody>
                             </table>
-                        </div>
+                            @if(!banks.length)
+                                <div class="text-center">You are yet to register a bank account {{user.first_name}} </div>
+                            @endif
+                        </div>  
 	                </div>
 	            </div>
 	        </div>

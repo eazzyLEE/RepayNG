@@ -166,10 +166,10 @@ class AuthController {
     user.bankAccounts().create({
       bank_id: bank,
       account_number,
-      bank_verification_number: bvn
-      // card_number,
-      // ccv,
-      // pin
+      bvn,
+      card_number,
+      ccv,
+      pin
     });
 
     if (user) {
