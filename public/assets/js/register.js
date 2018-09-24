@@ -1,7 +1,7 @@
 const statesAndLocalGov = [
   {
-    "state": "Abia",
-    "lgas": [
+    state: "Abia",
+    lgas: [
       "Aba North",
       "Aba South",
       "Arochukwu",
@@ -31,8 +31,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Adamawa",
-    "lgas": [
+    state: "Adamawa",
+    lgas: [
       "Demsa",
       "Fufore",
       "Ganye",
@@ -57,8 +57,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Akwa Ibom",
-    "lgas": [
+    state: "Akwa Ibom",
+    lgas: [
       "Abak",
       "Eastern-Obolo",
       "Eket",
@@ -95,8 +95,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Anambra",
-    "lgas": [
+    state: "Anambra",
+    lgas: [
       "Aguata",
       "Akwa North",
       "Anambra",
@@ -130,8 +130,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Bauchi",
-    "lgas": [
+    state: "Bauchi",
+    lgas: [
       "Alkaleri",
       "Bauchi",
       "Bogoro",
@@ -141,7 +141,7 @@ const statesAndLocalGov = [
       "Gamawa",
       "Ganjuwa",
       "Giade",
-      "Itas\/Gadau",
+      "Itas/Gadau",
       "Jama'Are",
       "Katagum",
       "Kirfi",
@@ -155,8 +155,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Benue",
-    "lgas": [
+    state: "Benue",
+    lgas: [
       "Ado",
       "Agatu",
       "Apa",
@@ -183,8 +183,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Borno",
-    "lgas": [
+    state: "Borno",
+    lgas: [
       "Abadan",
       "Askira-Uba",
       "Bama",
@@ -199,7 +199,7 @@ const statesAndLocalGov = [
       "Hawul",
       "Jere",
       "Kaga",
-      "Kala\/Balge",
+      "Kala/Balge",
       "Konduga",
       "Kukawa",
       "Kwaya-Kusar",
@@ -215,14 +215,14 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Bayelsa",
-    "lgas": [
+    state: "Bayelsa",
+    lgas: [
       "Adagbabiri",
       "Brass",
       "Ekeremor",
       "Kembe",
       "Kolokuma",
-      "Kolokuma\/Opkuma",
+      "Kolokuma/Opkuma",
       "Nembe",
       "Ogbia",
       "Sagbama",
@@ -232,8 +232,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Cross River",
-    "lgas": [
+    state: "Cross River",
+    lgas: [
       "Abi",
       "Abuochichie",
       "Akamkpa",
@@ -257,8 +257,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Delta",
-    "lgas": [
+    state: "Delta",
+    lgas: [
       "Aniocha North",
       "Aniocha-North",
       "Aniocha-South",
@@ -307,8 +307,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Ebonyi",
-    "lgas": [
+    state: "Ebonyi",
+    lgas: [
       "Abakaliki",
       "Afikpo-North",
       "Afikpo-South",
@@ -327,8 +327,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Edo",
-    "lgas": [
+    state: "Edo",
+    lgas: [
       "Afokpella",
       "Afuze",
       "Agbazilo",
@@ -361,15 +361,15 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Ekiti",
-    "lgas": [
+    state: "Ekiti",
+    lgas: [
       "Ado-Ekiti",
       "Aiyekire",
       "Efon",
       "Ekiti-East",
       "Ekiti-South-West",
       "Ekiti-West",
-      "Emure\/Ise\/Orun",
+      "Emure/Ise/Orun",
       "Gbonyin",
       "Ido-Osi",
       "Ijero",
@@ -377,15 +377,15 @@ const statesAndLocalGov = [
       "Ikere",
       "Ikole",
       "Ilejemeje",
-      "Irepodun\/Ifelodun",
+      "Irepodun/Ifelodun",
       "Ise-Orun",
       "Moba",
       "Oye"
     ]
   },
   {
-    "state": "Enugu",
-    "lgas": [
+    state: "Enugu",
+    lgas: [
       "Aninri",
       "Awgu",
       "Enugu-East",
@@ -407,19 +407,12 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Federal Capital Territory",
-    "lgas": [
-      "Abaji",
-      "Abuja Municipal",
-      "Gwagwalada",
-      "Kuje",
-      "Bwari",
-      "Kwali"
-    ]
+    state: "Federal Capital Territory",
+    lgas: ["Abaji", "Abuja Municipal", "Gwagwalada", "Kuje", "Bwari", "Kwali"]
   },
   {
-    "state": "Gombe",
-    "lgas": [
+    state: "Gombe",
+    lgas: [
       "Akko",
       "Balanga",
       "Billiri",
@@ -428,14 +421,14 @@ const statesAndLocalGov = [
       "Gombe",
       "Kaltungo",
       "Kwami",
-      "Nafada\/Bajoga",
+      "Nafada/Bajoga",
       "Shomgom",
-      "Yamaltu\/Deba"
+      "Yamaltu/Deba"
     ]
   },
   {
-    "state": "Imo",
-    "lgas": [
+    state: "Imo",
+    lgas: [
       "Aboh-Mbaise",
       "Ahiazu-Mbaise",
       "Dral-Esat",
@@ -445,7 +438,7 @@ const statesAndLocalGov = [
       "Ideato",
       "Ideato-North",
       "Ideato-South",
-      "Ihitte\/Uboma",
+      "Ihitte/Uboma",
       "Ikeduru",
       "Isiala-Mbano",
       "Isu",
@@ -475,8 +468,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Jigawa",
-    "lgas": [
+    state: "Jigawa",
+    lgas: [
       "Auyo",
       "Babura",
       "Biriniwa",
@@ -507,8 +500,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Kebbi",
-    "lgas": [
+    state: "Kebbi",
+    lgas: [
       "Aleiro",
       "Arewa-Dandi",
       "Argungu",
@@ -534,8 +527,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Kaduna",
-    "lgas": [
+    state: "Kaduna",
+    lgas: [
       "Birnin-Gwari",
       "Chikun",
       "Giwa",
@@ -550,7 +543,7 @@ const statesAndLocalGov = [
       "Kajuru",
       "Kaura",
       "Kauru",
-      "Koka\/Kawo",
+      "Koka/Kawo",
       "Kubah",
       "Kudan",
       "Lere",
@@ -558,14 +551,14 @@ const statesAndLocalGov = [
       "Sabon-Gari",
       "Sanga",
       "Soba",
-      "Tudun-Wada\/Makera",
+      "Tudun-Wada/Makera",
       "Zango-Kataf",
       "Zaria"
     ]
   },
   {
-    "state": "Kano",
-    "lgas": [
+    state: "Kano",
+    lgas: [
       "Ajingi",
       "Albasu",
       "Bagwai",
@@ -612,8 +605,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Kogi",
-    "lgas": [
+    state: "Kogi",
+    lgas: [
       "Adavi",
       "Ajaokuta",
       "Ankpa",
@@ -623,13 +616,13 @@ const statesAndLocalGov = [
       "Igalamela",
       "Ijumu",
       "Ikoyi-Ijumu",
-      "Kabba\/Bunu",
+      "Kabba/Bunu",
       "Kogi",
       "Lokoja",
       "Mopa-Muro-Mopi",
       "Obaji",
       "Ofu",
-      "Ogori\/Magongo",
+      "Ogori/Magongo",
       "Okehi",
       "Okene",
       "Olamaboro",
@@ -641,8 +634,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Katsina",
-    "lgas": [
+    state: "Katsina",
+    lgas: [
       "Bakori",
       "Batagarawa",
       "Batsari",
@@ -680,8 +673,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Kwara",
-    "lgas": [
+    state: "Kwara",
+    lgas: [
       "Asa",
       "Baruten",
       "Edu",
@@ -701,8 +694,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Lagos",
-    "lgas": [
+    state: "Lagos",
+    lgas: [
       "Agege",
       "Ajeromi-Ifelodun",
       "Alimosho",
@@ -729,8 +722,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Nassarawa",
-    "lgas": [
+    state: "Nassarawa",
+    lgas: [
       "Akwanga",
       "Awe",
       "Doma",
@@ -746,8 +739,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Niger",
-    "lgas": [
+    state: "Niger",
+    lgas: [
       "Agaie",
       "Agwara",
       "Bida",
@@ -776,12 +769,12 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Ogun",
-    "lgas": [
+    state: "Ogun",
+    lgas: [
       "Abeokuta-North",
       "Abeokuta-South",
       "Abor Mbaise",
-      "Ado-Odo\/Ota",
+      "Ado-Odo/Ota",
       "Adoodo-Ota",
       "Ewekoro",
       "Idarapo",
@@ -810,8 +803,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Ondo",
-    "lgas": [
+    state: "Ondo",
+    lgas: [
       "Akoko",
       "Akoko-North",
       "Akoko-North-West",
@@ -841,8 +834,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Osun",
-    "lgas": [
+    state: "Osun",
+    lgas: [
       "Atakumosa",
       "Atakumosa East",
       "Ayeda-Ade",
@@ -878,8 +871,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Oyo",
-    "lgas": [
+    state: "Oyo",
+    lgas: [
       "Afijio",
       "Akinyele",
       "Atiba",
@@ -916,8 +909,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Plateau",
-    "lgas": [
+    state: "Plateau",
+    lgas: [
       "Barkin-Ladi",
       "Bassa",
       "Bokkos",
@@ -938,9 +931,9 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Rivers",
-    "lgas": [
-      "Aboa\/Odual",
+    state: "Rivers",
+    lgas: [
+      "Aboa/Odual",
       "Ahoada-East",
       "Ahoada-West",
       "Akukutoru",
@@ -956,21 +949,21 @@ const statesAndLocalGov = [
       "Gokana",
       "Ikwerre",
       "Khana",
-      "Obia\/Akpor",
+      "Obia/Akpor",
       "Ogba-Egbema-Ndoni",
-      "Ogba\/Egbema\/Ndoni",
-      "Ogu\/Bolo",
+      "Ogba/Egbema/Ndoni",
+      "Ogu/Bolo",
       "Okirika",
       "Omuma",
-      "Opobo\/Nkoro",
+      "Opobo/Nkoro",
       "Oyigbo",
       "Port-Harcourt",
       "Tai"
     ]
   },
   {
-    "state": "Sokoto",
-    "lgas": [
+    state: "Sokoto",
+    lgas: [
       "Binji",
       "Bodinga",
       "Dange-Shuni",
@@ -996,8 +989,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Taraba",
-    "lgas": [
+    state: "Taraba",
+    lgas: [
       "Ardo-Kola",
       "Bali",
       "Donga",
@@ -1018,8 +1011,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Yobe",
-    "lgas": [
+    state: "Yobe",
+    lgas: [
       "Bade",
       "Borsali",
       "Damaturu",
@@ -1041,8 +1034,8 @@ const statesAndLocalGov = [
     ]
   },
   {
-    "state": "Zamfara",
-    "lgas": [
+    state: "Zamfara",
+    lgas: [
       "Anka",
       "Bakura",
       "Bukkuyum",
@@ -1062,235 +1055,235 @@ const statesAndLocalGov = [
   }
 ];
 
-
-$(function () {
-
+$(function() {
   function _lower(input) {
-    return input.toLowerCase().trim()
+    return input.toLowerCase().trim();
   }
 
   const methods = {
-      all: function() {
-          return statesAndLocalGov;
-      },
-      states: function () {
-          return statesAndLocalGov.map(function (nigeriaStates) {
-              return nigeriaStates.state;
-          });
-      },
-      lgas: function (state) {
-          state = _lower(state);
+    all: function() {
+      return statesAndLocalGov;
+    },
+    states: function() {
+      return statesAndLocalGov.map(function(nigeriaStates) {
+        return nigeriaStates.state;
+      });
+    },
+    lgas: function(state) {
+      state = _lower(state);
 
-          if (!state || state == "") {
-              throw new Error('Invalid Nigeria State');
-          }
-
-          if (['fct', 'f.c.t', 'abuja', 'f c t'].includes(state)) {
-              state = 'Federal Capital Territory'
-          }
-
-          return statesAndLocalGov.find(function (nigeriaStates) {
-              return _lower(nigeriaStates.state) === _lower(state);
-          });
+      if (!state || state == "") {
+        throw new Error("Invalid Nigeria State");
       }
+
+      if (["fct", "f.c.t", "abuja", "f c t"].includes(state)) {
+        state = "Federal Capital Territory";
+      }
+
+      return statesAndLocalGov.find(function(nigeriaStates) {
+        return _lower(nigeriaStates.state) === _lower(state);
+      });
+    }
   };
 
-    $("#wizardForm").simpleWizard({
-      cssClassStepActive: "active",
-      cssClassStepDone: "done",
-      onFinish: function() {
-        alert("Wizard finished")
-      }
-    });
-
-    // load all states
-    for( i of methods.all() ) {
-      $("#state").append(`<option value="${i.state}">${i.state}</option>`)
+  $("#wizardForm").simpleWizard({
+    cssClassStepActive: "active",
+    cssClassStepDone: "done",
+    onFinish: function() {
+      //alert("Wizard finished")
+      let url = window.location.href;
+      window.location =
+        url
+          .split("")
+          .splice(10, 8, "dashboard")
+          .join("");
     }
-
-    // load LGAs
-    $("#state").change(function() {
-      let lgas = methods.lgas(this.value).lgas
-      const option_lgas = lgas.map(lga => `<option value="${lga}"> ${lga} </option>`)
-      $("#lga").html(option_lgas)
-    });
-
   });
 
-var validator = $("#wizardForm").validate({
-    errorClass: 'help-block text-danger',
-    rules: {
-      email: {
-        email: true
-      },
-      password2: {
-        equalTo: "#password"
-      },
-      status: "required",
-      title: "required",
-      bank: "required"
-    },
-    messages: {
-      first_name: "Please specify your first name",
-      last_name: "Please specify your last name",
-      email: {
-        required: "We need your email address to contact you",
-        email: "Your email address must be in the format of name@domain.com"
-      },
-      password: {
-          requied: "Please enter your password",
-          password: "Password must contain at least a capital letter, a number and a symbol"
-      },
-      password2: {
-        equalTo: "Password do not match"
-      },
-      bank: {
-        requied: "Please select a bank"
-      }
-    }
-});
-
-  function registerUser(event){
-    $("#step_four_button").prop("disabled", true)
-    axios.post('/user/register', {
-        title: $("#title").val(),
-        first_name: $("#first_name").val(),
-        last_name: $("#last_name").val(),
-        day: $("#day").val(),
-        month: $("#month").val(),
-        year: $("#year").val(),
-        status: $("#status").val(),
-        gender: $("#gender").val(),
-        address: $("#address").val(),
-        lga: $("#lga").val(),
-        state: $("#state").val(),
-        phone: $("#phone").val(),
-        email: $("#email").val(),
-        password: $("#password").val(),
-        bank: $('input[name=bank]:checked').val(),
-        account_number: $("#account_number").val(),
-        bvn: $("#bvn").val(),
-        card_number: $("#card_number").val(),
-        ccv: $("#ccv").val(),
-        pin: $("#pin").val(),
-        date_of_birth: `${$("#year").val()}-${$("#month").val()}-${$("#day").val()}`,
-      })
-      .then(function (response) {
-        if (response.data.status == 'error' ) {
-          alert(response.data.message)
-          $("#step_four_button").prop("disabled", false)
-          return false;
-        } else {
-          $("#step_four_button").addClass('wizard-next');
-          $("#step_four_button").prop("disabled", false)
-          var wizard = $('#wizardForm').bootstrapWizard();
-          wizard.bootstrapWizard('next')
-        }
-      })
-      .catch(function (error) {
-        console.log(error)
-        $("#step_four_button").prop("disabled", false)
-      });
+  // load all states
+  for (i of methods.all()) {
+    $("#state").append(`<option value="${i.state}">${i.state}</option>`);
   }
 
-
-  // Validate Step One
-  $("#step_one_button").click(function() {
-
-    const step_one_fields = [ 
-        "#title",
-        "#first_name",
-        "#last_name",
-        "#day",
-        "#month",
-        "#year",
-        "#status",
-        "#gender",
-        "#address",
-        "#lga",
-        "#state",
-        "#phone"
-    ];
-
-    let isValid = false;
-
-    $("#step_one_button").removeClass('wizard-next');
-
-    for (id of step_one_fields) {
-        isValid = validator.element( id )
-        if (!isValid) {
-            // when one input is not valid, no need to continue looping...
-            break;
-        }
-    }
-
-    if (isValid) { // if all fields are valid, move to another step..
-      $("#step_one_button").addClass('wizard-next');
-      $("this").click();
-    }
+  // load LGAs
+  $("#state").change(function() {
+    let lgas = methods.lgas(this.value).lgas;
+    const option_lgas = lgas.map(
+      lga => `<option value="${lga}"> ${lga} </option>`
+    );
+    $("#lga").html(option_lgas);
   });
+});
 
-  // Validate step 2
-  $("#step_two_button").click(function() {
+var validator = $("#wizardForm").validate({
+  errorClass: "help-block text-danger",
+  rules: {
+    email: {
+      email: true
+    },
+    password2: {
+      equalTo: "#password"
+    },
+    status: "required",
+    title: "required",
+    bank: "required"
+  },
+  messages: {
+    first_name: "Please specify your first name",
+    last_name: "Please specify your last name",
+    email: {
+      required: "We need your email address to contact you",
+      email: "Your email address must be in the format of name@domain.com"
+    },
+    password: {
+      required: "Please enter your password",
+      password:
+        "Password must contain at least a capital letter, a number and a symbol"
+    },
+    password2: {
+      equalTo: "Password do not match"
+    },
+    bank: {
+      required: "Please select a bank"
+    }
+  }
+});
 
-    let step_two_fields = [
-      "#email",
-      "#password",
-      "#password2"
-    ];
-
-    let isValid = false;
-
-    for (id of step_two_fields) {
-      isValid = validator.element( id )
-      if (!isValid) {
-          // when one input is not valid, no need to continue looping...
-          break;
+function registerUser(event) {
+  $("#step_four_button").prop("disabled", true);
+  axios
+    .post("/user/register", {
+      title: $("#title").val(),
+      first_name: $("#first_name").val(),
+      last_name: $("#last_name").val(),
+      day: $("#day").val(),
+      month: $("#month").val(),
+      year: $("#year").val(),
+      status: $("#status").val(),
+      gender: $("#gender").val(),
+      address: $("#address").val(),
+      lga: $("#lga").val(),
+      state: $("#state").val(),
+      phone: $("#phone").val(),
+      email: $("#email").val(),
+      password: $("#password").val(),
+      bank: $("input[name=bank]:checked").val(),
+      account_number: $("#account_number").val(),
+      bvn: $("#bvn").val(),
+      card_number: $("#card_number").val(),
+      ccv: $("#ccv").val(),
+      pin: $("#pin").val(),
+      date_of_birth: `${$("#year").val()}-${$("#month").val()}-${$(
+        "#day"
+      ).val()}`
+    })
+    .then(function(response) {
+      if (response.data.status == "error") {
+        alert(response.data.message);
+        $("#step_four_button").prop("disabled", false);
+        return false;
+      } else {
+        $("#step_four_button").addClass("wizard-next");
+        $("#step_four_button").prop("disabled", false);
+        var wizard = $("#wizardForm").bootstrapWizard();
+        wizard.bootstrapWizard("next");
       }
+    })
+    .catch(function(error) {
+      console.log(error);
+      $("#step_four_button").prop("disabled", false);
+    });
+}
+
+// Validate Step One
+$("#step_one_button").click(function() {
+  const step_one_fields = [
+    "#title",
+    "#first_name",
+    "#last_name",
+    "#day",
+    "#month",
+    "#year",
+    "#status",
+    "#gender",
+    "#address",
+    "#lga",
+    "#state",
+    "#phone"
+  ];
+
+  let isValid = false;
+
+  $("#step_one_button").removeClass("wizard-next");
+
+  for (id of step_one_fields) {
+    isValid = validator.element(id);
+    if (!isValid) {
+      // when one input is not valid, no need to continue looping...
+      break;
     }
+  }
 
-    $("#step_two_button").removeClass('wizard-next');
-    if (isValid) {
-      $("#step_two_button").addClass('wizard-next');
-      $("this").click();
+  if (isValid) {
+    // if all fields are valid, move to another step..
+    $("#step_one_button").addClass("wizard-next");
+    $("this").click();
+  }
+});
+
+// Validate step 2
+$("#step_two_button").click(function() {
+  let step_two_fields = ["#email", "#password", "#password2"];
+
+  let isValid = false;
+
+  for (id of step_two_fields) {
+    isValid = validator.element(id);
+    if (!isValid) {
+      // when one input is not valid, no need to continue looping...
+      break;
     }
-  });
+  }
 
-  // Validate step 3
-  $("#step_three_button").click(function() {
-    
-    $("#step_three_button").removeClass('wizard-next');
-    if ( validator.element("input[name='bank']") ) {
-      $("#step_three_button").addClass('wizard-next');
-      $("this").click();
+  $("#step_two_button").removeClass("wizard-next");
+  if (isValid) {
+    $("#step_two_button").addClass("wizard-next");
+    $("this").click();
+  }
+});
+
+// Validate step 3
+$("#step_three_button").click(function() {
+  $("#step_three_button").removeClass("wizard-next");
+  if (validator.element("input[name='bank']")) {
+    $("#step_three_button").addClass("wizard-next");
+    $("this").click();
+  }
+});
+
+// Validate step 4
+$("#step_four_button").click(function(event) {
+  let step_four_fields = [
+    "#account_number",
+    "#bvn",
+    "#card_number",
+    "#ccv",
+    "#pin",
+    "#pin2"
+  ];
+
+  let isValid = false;
+
+  for (id of step_four_fields) {
+    isValid = validator.element(id);
+    if (!isValid) {
+      // when one input is not valid, no need to continue looping...
+      break;
     }
-  });
-
-  // Validate step 4
-  $("#step_four_button").click(function(event) {
-
-    let step_four_fields = [
-      "#account_number",
-      "#bvn",
-      "#card_number",
-      "#ccv",
-      "#pin",
-      "#pin2"
-    ];
-
-    let isValid = false;
-
-    for (id of step_four_fields) {
-      isValid = validator.element( id )
-      if (!isValid) {
-          // when one input is not valid, no need to continue looping...
-          break;
-      }
-    }
-      event.preventDefault();
-      $("#step_four_button").removeClass('wizard-next');
-      if (isValid) { 
-        registerUser(this)
-      }
-  });
-
+  }
+  event.preventDefault();
+  $("#step_four_button").removeClass("wizard-next");
+  if (isValid) {
+    registerUser(this);
+  }
+});

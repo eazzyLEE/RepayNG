@@ -181,9 +181,10 @@ class AuthController {
   }
 
   async edit({ request, response, view, params, session }) {
-    const user_id = params.user_id;
-
-    const user = await User.find(user_id);
+    // fetch login user details
+    const user = session.get("logged_in_user", []);
+    const id = user.id;
+    console.log(user.id);
 
     if (user) {
       return view.render("pages.user.edit", { user: user.toJSON() });

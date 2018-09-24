@@ -178,100 +178,36 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="card">
-                                        <div>
-                                            <td>11/04/2017</td>
-                                            <td>#12345</td>
-                                            <td>Tution Fee Loans</td>
-                                            <td>N20,000</td>
-                                            <td>
-                                                <input id="checkbox6" type="checkbox" class="bg-success" checked="">
-                                                <label for="checkbox6" class="text-success">Successful</label>
-                                            </td>
-                                            <td>I need this loan urgently</td>
-                                            <td class="dropdown">
-                                                <a href="#notifications" class="dropdown-toggle btn-rotate" data-toggle="dropdown">
-                                                    <i class="ti-more"></i>
-                                                </a>
-                                                <ul style="margin-left: -100px" class="dropdown-menu">
-                                                    <li><a href="#not1">Open</a></li>
-                                                    <li><a href="#not2">Mark Multiple</a></li>
-                                                    <li><a href="#not2">Close Windows</a></li>
-                                                </ul>
-                                            </td>
-                                        </div>
-                                    </tr>
-                                    <tr class="card">
-                                        <div style="padding-top: 40px">
-                                            <td>11/04/2017</td>
-                                            <td>#12345</td>
-                                            <td>Academic Loans</td>
-                                            <td>N20,000</td>
-                                            <td>
-                                                <input id="checkbox6" type="checkbox" class="checkbox-success" checked="">
-                                                <label for="checkbox6" class="text-danger">Declined</label>
-                                            </td>
-                                            <td>I need this loan urgently</td>
-                                            <td class="dropdown">
-                                                <a href="#notifications" class="dropdown-toggle btn-rotate" data-toggle="dropdown">
-                                                    <i class="ti-more"></i>
-                                                </a>
-                                                <ul style="margin-left: -100px" class="dropdown-menu">
-                                                    <li><a href="#not1">Open</a></li>
-                                                    <li><a href="#not2">Mark Multiple</a></li>
-                                                    <li><a href="#not2">Close Windows</a></li>
-                                                </ul>
-                                            </td>
-                                        </div>
-                                    </tr>
-                                    <tr class="card">
-                                        <div style="padding-top: 40px">
-                                            <td>11/04/2017</td>
-                                            <td>#12345</td>
-                                            <td>Academic Loans</td>
-                                            <td>N50,000</td>
-                                            <td>
-                                                <input id="checkbox6" type="checkbox" class="checkbox-success" checked="">
-                                                <label for="checkbox6" class="text-muted">Pending Approval</label>
-                                            </td>
-                                            <td>I need this loan urgently</td>
-                                            <td class="dropdown">
-                                                <a href="#notifications" class="dropdown-toggle btn-rotate" data-toggle="dropdown">
-                                                    <i class="ti-more"></i>
-                                                </a>
-                                                <ul style="margin-left: -100px" class="dropdown-menu">
-                                                    <li><a href="#not1">Open</a></li>
-                                                    <li><a href="#not2">Mark Multiple</a></li>
-                                                    <li><a href="#not2">Close Windows</a></li>
-                                                </ul>
-                                            </td>
-                                        </div>
-                                    </tr>
-                                    <tr class="card">
-                                        <div style="padding-top: 40px">
-                                            <td>11/04/2017</td>
-                                            <td>#12345</td>
-                                            <td>Academic Loans</td>
-                                            <td>N50,000</td>
-                                            <td>
-                                                <input id="checkbox6" type="checkbox" class="checkbox-success" checked="">
-                                                <label for="checkbox6" class="text-warning">Loan Cancelled</label>
-                                            </td>
-                                            <td>I need this loan urgently</td>
-                                            <td class="dropdown">
-                                                <a href="#notifications" class="dropdown-toggle btn-rotate" data-toggle="dropdown">
-                                                    <i class="ti-more"></i>
-                                                </a>
-                                                <ul style="margin-left: -100px" class="dropdown-menu">
-                                                    <li><a href="#not1">Open</a></li>
-                                                    <li><a href="#not2">Mark Multiple</a></li>
-                                                    <li><a href="#not2">Close Windows</a></li>
-                                                </ul>
-                                            </td>
-                                        </div>
-                                    </tr>
+                                    @each(loan in loans)
+                                        <tr class="card">
+                                            <div>
+                                                <td>{loan.created_at}</td>
+                                                <td>{loan.id}</td>
+                                                <td>{loan.loan_type_id}</td>
+                                                <td>{loan.amount}</td>
+                                                <td>
+                                                    <input id="checkbox6" type="checkbox" class="bg-success" checked="">
+                                                    <label for="checkbox6" class="text-success">Successful</label>
+                                                </td>
+                                                <td>{loan.remarks}</td>
+                                                <td class="dropdown">
+                                                    <a href="#notifications" class="dropdown-toggle btn-rotate" data-toggle="dropdown">
+                                                        <i class="ti-more"></i>
+                                                    </a>
+                                                    <ul style="margin-left: -100px" class="dropdown-menu">
+                                                        <li><a href="#not1">Open</a></li>
+                                                        <li><a href="#not2">Mark Multiple</a></li>
+                                                        <li><a href="#not2">Close Windows</a></li>
+                                                    </ul>
+                                                </td>
+                                            </div>
+                                        </tr>
+                                    @endeach
                                 </tbody>
                             </table>
+                            @if(!loans.length)
+                                <div class="text-center">You are yet to apply for a loan, {{user.first_name}} </div>
+                            @endif
                         </div>
                     </div>
 	            </div>

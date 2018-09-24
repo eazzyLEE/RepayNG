@@ -39,6 +39,10 @@ class User extends Model {
   bankAccounts() {
     return this.hasMany("App/Models/BankRegistration");
   }
+
+  loans() {
+    return this.hasMany("App/Models/LoanHistory")
+  }
 }
 
 module.exports = User;

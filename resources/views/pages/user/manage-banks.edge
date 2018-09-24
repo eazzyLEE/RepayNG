@@ -150,7 +150,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-sm-12">
+                        <div class="col-sm-12 content table-responsive table-full-width">
                             <table class="table padded-table">
                                 <thead>
                                     <tr>
@@ -167,7 +167,7 @@
                                     <tr class="card">
                                         <div>
                                             <td>
-                                                <img src="assets/img/banks/{{bank.bank_id}}.png" class="table-img" />
+                                                <img src="assets/img/banks/{{bank.bank_id}}.jpg" class="table-img" />
                                             </td>
                                             <td>{{bank.account_number}}</td>
                                             <td>Isreal Bankole Adejumo</td>
@@ -189,9 +189,10 @@
                                 </tbody>
                             </table>
                             @if(!banks.length)
-                                <div class="text-center">You are yet to register a bank account {{user.first_name}} </div>
+                                <div class="text-center">You are yet to register a bank account, {{user.first_name}} </div>
                             @endif
-                        </div>  
+                           </div>  
+                        
 	                </div>
 	            </div>
 	        </div>
