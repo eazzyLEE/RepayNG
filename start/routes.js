@@ -28,7 +28,7 @@ Route.get("/loans", "LoanHistoryController.index").as("loans");
 
 Route.group(() => {
   Route.get("/logout", "AuthController.logout").as("logout");
-  Route.get("/", "DashboardController.index");
+  //Route.get("/", "DashboardController.index");
   Route.get("/dashboard", "DashboardController.index");
   // Route.get("/loans", "LoanHistoryController.index").as("loans");
   Route.get("/special-loans", "SpecialLoanController.index").as("special");
