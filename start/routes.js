@@ -22,14 +22,14 @@ Route.get("/register", "AuthController.register_view");
 Route.post("/user/register", "AuthController.register").as("register");
 //Route.get("/edit", ({ view }) => view.render("pages.user.edit"));
 //Route.get("/user-edit/:user_id", "AuthController.edit").as("edit_user");
-Route.post("/add-account", "BankRegistrationController.register");
-// Route.get("/banks/:id", "BankController.index").as("manage-banks");
-Route.get("/loans", "LoanHistoryController.index").as("loans");
 
 Route.group(() => {
   Route.get("/logout", "AuthController.logout").as("logout");
-  //Route.get("/", "DashboardController.index");
+  Route.get("/", "DashboardController.index");
   Route.get("/dashboard", "DashboardController.index");
+  Route.post("/add-account", "BankRegistrationController.register");
+  // Route.get("/banks/:id", "BankController.index").as("manage-banks");
+  Route.get("/loans", "LoanHistoryController.index").as("loans");
   // Route.get("/loans", "LoanHistoryController.index").as("loans");
   Route.get("/special-loans", "SpecialLoanController.index").as("special");
   Route.get("/referrals", "ReferralController.index").as("referrals");
