@@ -1091,7 +1091,7 @@ $(function() {
     cssClassStepDone: "done",
     onFinish: function() {
       //alert("Wizard finished")
-      let url = window.location.href;
+      const url = window.location.href;
       window.location =
         url
           .split("")
@@ -1167,7 +1167,8 @@ function registerUser(event) {
       phone: $("#phone").val(),
       email: $("#email").val(),
       password: $("#password").val(),
-      bank: $("input[name=bank]:checked").val(),
+      //bank: $("input[name=bank]:checked").val(),
+      bank: $("#bank").val(),
       account_number: $("#account_number").val(),
       bvn: $("#bvn").val(),
       card_number: $("#card_number").val(),
@@ -1253,13 +1254,13 @@ $("#step_two_button").click(function() {
 });
 
 // Validate step 3
-$("#step_three_button").click(function() {
-  $("#step_three_button").removeClass("wizard-next");
-  if (validator.element("input[name='bank']")) {
-    $("#step_three_button").addClass("wizard-next");
-    $("this").click();
-  }
-});
+// $("#step_three_button").click(function() {
+//   $("#step_three_button").removeClass("wizard-next");
+//   if (validator.element("input[name='bank']")) {
+//     $("#step_three_button").addClass("wizard-next");
+//     $("this").click();
+//   }
+// });
 
 // Validate step 4
 $("#step_four_button").click(function(event) {

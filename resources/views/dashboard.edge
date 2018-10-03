@@ -27,72 +27,8 @@
 
 <body class="sidebar-mini">
 	<div class="wrapper">
-        <div class="sidebar" data-background-color="white" data-active-color="success">
-            <div class="sidebar-wrapper">
-                <div class="card-user profile" align="center">
-                    <div class="content">
-                        <div class="author">
-                            <img class="avatar border-white img-profile-lg" src="assets/img/faces/card-profile4-square.jpg" alt="..."/>
-                            <h4 class="title">{{user.first_name}} {{user.last_name}}<br />
-                                <a href="#"><small>Student Account</small></a>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-                <ul class="nav">
-            
-                        <li class="active">
-                            <a href="/dashboard">
-                                <i class="ti-home"></i>
-                                <p>Dashboard</p>
-                            </a>
-                        </li>
-            
-                        <li>
-                            <a href="{{ route('loans') }}">
-                                <i class="ti-wallet"></i>
-                                <p>Loans</p>
-                            </a>
-                        </li>
-            
-                        <li>
-                            <a href="{{ route('special') }}">
-                                <i class="ti-star"></i>
-                                <p>Special Loans</p>
-                            </a>
-                        </li>
-            
-                        <li>
-                            <a href="{{ route('referrals') }}">
-                                <i class="ti-user"></i>
-                                <p>Referrals</p>
-                            </a>
-                        </li>
-            
-                        <li>
-                            <a href="{{ route('manage-cards') }}">
-                                <i class="ti-credit-card"></i>
-                                <p>Manage Cards</p>
-                            </a>
-                        </li>
-            
-                        <li>
-                            <a href="/banks">
-                                <i class="ti-harddrives"></i>
-                                <p>Manage Banks</p>
-                            </a>
-                        </li>
-            
-                        <li>
-                            <a href="support.html">
-                                <i class="ti-support"></i>
-                                <p>Support</p>
-                            </a>
-                        </li>
-            
-                </ul>
-            </div>	    	
-	    </div>
+        @include('partials.sidebar')
+        
 	    <div class="main-panel">
 	        <nav class="navbar bg-white">
 	            <div class="container-fluid">
@@ -150,12 +86,13 @@
                             <div class="row">
                             <h4 class="fs-16">Hello there, {{user.first_name}}</h4>
                                 <p class="col-sm-6 fs-12 no-padding">Oh so, your weak rhyme You doubt I'll bother, reading into it I'll probably won't, left to my own devices.
-                                    <br /><br /><button class="btn-sm btn bg-indigo">Add a new loan</button>
+                                    <br /><br /><a href="/apply"><button class="btn-sm btn bg-indigo">Add a new loan</button></a>
                                 </p>
                             </div>
                             <br />
                             <div class="no-padding row">
                                 <div class="col-sm-4">
+                                    <a href="/loans">
                                     <div class="card" align="center">
                                         <div class="card-header">
                                             <i class="ti-wallet fs-30"></i>
@@ -164,7 +101,7 @@
                                           <h5 class="card-title bold">Loan</h5>
                                           <p class="card-text fs-12">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                         </div>
-                                    </div>
+                                    </div></a>
                                 </div>
                                 <div class="col-sm-4 col-sm-offset-1">
                                     <div class="card" align="center">

@@ -22,6 +22,7 @@ Route.get("/register", "AuthController.register_view");
 Route.post("/user/register", "AuthController.register").as("register");
 //Route.get("/edit", ({ view }) => view.render("pages.user.edit"));
 //Route.get("/user-edit/:user_id", "AuthController.edit").as("edit_user");
+Route.get("/add-loan", "LoanHistoryController.index_add");
 
 Route.group(() => {
   Route.get("/logout", "AuthController.logout").as("logout");
@@ -31,14 +32,15 @@ Route.group(() => {
   // Route.get("/banks/:id", "BankController.index").as("manage-banks");
   Route.get("/loans", "LoanHistoryController.index").as("loans");
   // Route.get("/loans", "LoanHistoryController.index").as("loans");
-  Route.get("/special-loans", "SpecialLoanController.index").as("special");
+  Route.get("/apply", "SpecialLoanController.index").as("apply");
   Route.get("/referrals", "ReferralController.index").as("referrals");
   Route.get("/banks", "BankController.index").as("manage-banks");
   //Route.post("/add-account", "BankRegistrationController.register");
   Route.get("/user-edit", "AuthController.edit").as("edit_user");
   Route.get("/new-loan", "LoanTypeController.index");
   Route.get("/logout", "AuthController.logout");
-  Route.post("/add-loan", "LoanHistoryController.update");
+  // Route.get("/add-loan", "LoanHistoryController.index_add");
+  // Route.post("/new-loan", "LoanHistoryController.index_add");
   Route.post("/user/update", "AuthController.update");
 
   //Route.get("/new-loan", "CardController.index").as("manage-cards");

@@ -36,7 +36,6 @@
       <ul class="nav nav-pills justify-content-center b-b" style="cursor: text">
         <li role="presentation" class="wizard-step-indicator"><a style="cursor: none;" class="nav-link" data-toggle="tab" data-target="#personal" disabled >Personal Data</a></li>
         <li role="presentation" class="wizard-step-indicator"><a style=" cursor: none;"class="nav-link" data-toggle="tab" data-target="#login" disabled >Login Details</a></li>
-        <li role="presentation" class="wizard-step-indicator"><a style=" cursor: none;" class="nav-link" data-toggle="tab" data-target="#banktype" disabled >Select Your Bank</a></li>
         <li role="presentation" class="wizard-step-indicator"><a style=" cursor: none;" class="nav-link" data-toggle="tab" data-target="#bank" disabled >Bank Details</a></li>
         <li role="presentation" class="wizard-step-indicator"><a style=" cursor: none; "class="nav-link" data-toggle="tab" data-target="#confirm" disabled >Confirmation</a></li>
       </ul>
@@ -224,7 +223,7 @@
             </div>
             <div class="row" align="center">
               <div class="col-sm-5">
-                <button class="btn btn-block wizard-prev bg-indigo fs-14 bold">Save and Exit</button>
+                <button class="btn btn-block wizard-prev bg-indigo fs-14 bold">Back</button>
               </div>
               <div class="col-sm-5">
                 <button id="step_two_button" class="btn btn-block wizard-next bg-success fs-14 bold">Continue <i class="fa fa-long-arrow-right right fs-14"></i></button>
@@ -232,29 +231,7 @@
             </div>
           </div>
 
-          <div id="banktype" class="wizard-step tab-pane container-fluid fade">
-            <div class="row">
-              <div class="col-sm-12" align="center">
-                <h2 class="bold">Select Your Bank</h2>
-              </div>
-              @each(bank in banks)
-                <div class="col-sm-3">
-                  <label>
-                  <input id="{{bank.bank}}" type="radio" name="bank" value="{{bank.id}}" />
-                    <img src="assets/img/banks/{{bank.bank}}.jpeg" class="img-responsive"/>
-                  </label>
-                </div>
-              @endeach
-            </div>
-            <div class="row" align="center">
-              <div class="col-sm-5">
-                <button class="btn btn-block wizard-prev bg-indigo fs-14 bold">Save and Exit</button>
-              </div>
-              <div class="col-sm-5">
-                <button id="step_three_button" class="btn btn-block wizard-next bg-success fs-14 bold">Continue <i class="fa fa-long-arrow-right right fs-14"></i></button>
-              </div>
-            </div>
-          </div>
+
 
           <div id="bank" class=" wizard-step tab-pane container-fluid fade">
             <div class="col-sm-6">
@@ -264,7 +241,29 @@
               <h2>Bank account Details</h2>
               <br />
               <br />
-              <label class="bold">Zenith Bank</label>
+              <div class="form-group m-t-10">
+                <select id="bank" name="bank" class="form-control bg-dark text-white validate[required]" required>
+                  <option value="">Bank</option>
+                  <option value="access">Access</option>
+                  <option value="citibank">CitiBank</option>
+                  <option value="diamond">Diamond</option>
+                  <option value="ecobank">Ecobank</option>
+                  <option value="fcmb">FCMB</option>
+                  <option value="fidelity">Fidelity</option>
+                  <option value="firstbank">FirstBank</option>
+                  <option value="gtbank">GTBank</option>
+                  <option value="heritage">Heritage</option>
+                  <option value="jaiz">Jaiz</option>
+                  <option value="skye">Skye</option>
+                  <option value="stanbic">Stanbic</option> 
+                  <option value="sterling">Sterling</option>
+                  <option value="union">Union Bank</option>
+                  <option value="uba">UBA</option>
+                  <option value="unity">Unity</option>
+                  <option value="wema">Wema</option>
+                  <option value="zenith">Zenith</option>
+                </select>
+              </div>
               <div class="form-group m-t-10">
                 <input type="text" name="account_number" id="account_number" class="form-control bordered" placeholder="Account Number" required/>
                 <i class="form-group__bar"></i>
@@ -314,7 +313,7 @@
               </div>
               <div class="row" align="center">
                 <div class="col-sm-6">
-                  <button class="btn btn-block wizard-prev bg-indigo fs-12 bold">Save and Exit</button>
+                  <button class="btn btn-block wizard-prev bg-indigo fs-12 bold">Back</button>
                 </div>
                 <div class="col-sm-6">
                   <button id="step_four_button" class="btn btn-block wizard-next bg-success fs-12 bold">Continue<i class="fa fa-long-arrow-right right fs-12"></i></button>
@@ -336,7 +335,7 @@
 
             <div class="col-sm-10 col-sm-offset-2" align="center" style="margin-top: 30px">
               <div class="col-sm-5">
-                <button class="btn btn-block wizard-prev bg-indigo fs-14 bold">Save and Exit</button>
+                <button class="btn btn-block wizard-prev bg-indigo fs-14 bold">Back</button>
               </div>
               <div class="col-sm-5">
                 <a href="/dashboard">
