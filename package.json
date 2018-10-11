@@ -26,7 +26,7 @@
     "@adonisjs/lucid": "^5.0.4",
     "@adonisjs/session": "^1.0.26",
     "@adonisjs/shield": "^1.0.6",
-    "adonis-acl": "^1.1.0",
+    "adonis-acl": "^1.1.1",
     "edge.js": "^1.1.4",
     "mysql": "^2.16.0"
   },

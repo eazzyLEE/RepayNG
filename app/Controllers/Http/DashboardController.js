@@ -7,6 +7,10 @@ class DashboardController {
     console.log(user.id);
     return view.render("dashboard", { user });
   }
+
+  async auth({ view, response }) {
+    return view.render("admin-dash");
+  }
 }
 
 module.exports = DashboardController;

@@ -15,7 +15,8 @@ const globalMiddleware = [
   "Adonis/Middleware/BodyParser",
   "Adonis/Middleware/Session",
   "Adonis/Middleware/Shield",
-  "Adonis/Middleware/AuthInit"
+  "Adonis/Middleware/AuthInit",
+  "Adonis/Acl/Init"
 ];
 
 /*
@@ -37,7 +38,9 @@ const globalMiddleware = [
 */
 const namedMiddleware = {
   auth: "Adonis/Middleware/Auth",
-  protect: "App/Middleware/Auth"
+  protect: "App/Middleware/Auth",
+  is: "Adonis/Acl/Is",
+  can: "Adonis/Acl/Can"
 };
 
 /*

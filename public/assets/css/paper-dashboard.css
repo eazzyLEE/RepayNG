@@ -10250,6 +10250,7 @@ star {
   min-height: calc(100vh - 70px);
 }
 .full-page .full-page-background {
+  background-image: url('../../assets/img/background/background-2.jpg');
   position: absolute;
   z-index: 1;
   height: 100%;

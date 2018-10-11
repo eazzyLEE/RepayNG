@@ -23,6 +23,9 @@ Route.post("/user/register", "AuthController.register").as("register");
 //Route.get("/edit", ({ view }) => view.render("pages.user.edit"));
 //Route.get("/user-edit/:user_id", "AuthController.edit").as("edit_user");
 Route.get("/add-loan", "LoanHistoryController.index_add");
+Route.get("/admin", ({ view }) => view.render("admin")).as("admin");
+Route.post("/admin", "AuthController.auth");
+Route.get("/admin_dash", "DashboardController.auth");
 
 Route.group(() => {
   Route.get("/logout", "AuthController.logout").as("logout");

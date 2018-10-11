@@ -51,6 +51,28 @@ class AuthController {
     }
   }
 
+  async auth({ request, response, auth, session }) {
+    const email = request.input("email");
+    const password = request.input("password");
+
+    if (email === "hello@repay.ng" && password === "123Repay18") {
+      return response.redirect("/admin_dash");
+    } else {
+      return response.redirect("/");
+    }
+    // try {
+    //   if (email === "hello@repay.ng" && password === "123Repay18") {
+    //     return response.redirect("/admin_dash");
+    //   } else {
+    //     return response.redirect("/");
+    //   }
+    // } catch (e) {
+    //   console.log(e.message);
+    //   session.flash({ type: "danger", message: "Invalid email or password" });
+    //   return response.redirect("/");
+    // }
+  }
+
   async logout({ auth, response }) {
     await auth.logout();
 
