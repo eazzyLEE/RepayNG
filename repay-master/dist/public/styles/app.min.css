@@ -13395,6 +13395,10 @@ section {
   width: 200px;
 }
 
+.get-started:hover {
+  color: #FFFFFF;
+}
+
 h1.section-title {
   margin: 0 0 7.5rem;
   opacity: 0.4;
