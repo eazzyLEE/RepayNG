@@ -26,6 +26,9 @@ Route.get("/add-loan", "LoanHistoryController.index_add");
 Route.get("/admin", ({ view }) => view.render("admin")).as("admin");
 Route.post("/admin", "AuthController.auth");
 Route.get("/admin_dash", "DashboardController.auth");
+Route.get("/", ({ view }) => view.render("home")).as("home");
+Route.get("/about-us", ({ view }) => view.render("about-us")).as("about");
+Route.get("/support", ({ view }) => view.render("support")).as("support");
 
 Route.group(() => {
   Route.get("/logout", "AuthController.logout").as("logout");
