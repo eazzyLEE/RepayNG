@@ -32,7 +32,7 @@ Route.get("/support", ({ view }) => view.render("support")).as("support");
 
 Route.group(() => {
   Route.get("/logout", "AuthController.logout").as("logout");
-  Route.get("/", "DashboardController.index");
+  //Route.get("/", "DashboardController.index");
   Route.get("/dashboard", "DashboardController.index");
   Route.post("/add-account", "BankRegistrationController.register");
   // Route.get("/banks/:id", "BankController.index").as("manage-banks");
