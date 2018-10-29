@@ -13576,7 +13576,7 @@ header ul li {
 }
 
 #hero.home {
-  background: #fbf9f2 url("../images/hero.jpg") right;
+  background: #fbf9f2 url("../../images/hero.jpg") right;
   height: calc(100vh - 100px);
   max-height: 700px;
 }
@@ -13872,7 +13872,7 @@ header ul li {
 }
 
 #statistics {
-  background: #e7e8ea url("../images/statistics.jpg") bottom right no-repeat;
+  background: #e7e8ea url("../../images/statistics.jpg") bottom right no-repeat;
 }
 
 @media (max-width: 767px) {
