@@ -23,12 +23,17 @@ Route.post("/user/register", "AuthController.register").as("register");
 //Route.get("/edit", ({ view }) => view.render("pages.user.edit"));
 //Route.get("/user-edit/:user_id", "AuthController.edit").as("edit_user");
 Route.get("/add-loan", "LoanHistoryController.index_add");
-Route.get("/admin", ({ view }) => view.render("admin")).as("admin");
-Route.post("/admin", "AuthController.auth");
-Route.get("/admin_dash", "DashboardController.auth");
+
 Route.get("/", ({ view }) => view.render("home")).as("home");
 Route.get("/about-us", ({ view }) => view.render("about-us")).as("about");
 Route.get("/support", ({ view }) => view.render("support")).as("support");
+
+Route.group(() => {
+  Route.post("/admin", "AuthController.auth");
+  Route.get("/admin", ({ view }) => view.render("admin")).as("admin");
+  Route.get("/admin_dash", "DashboardController.auth");
+  Route.get("/users", "AuthController.users");
+}).middleware(["is:(administrator)"]);
 
 Route.group(() => {
   Route.get("/logout", "AuthController.logout").as("logout");

@@ -4,6 +4,7 @@ const User = use("App/Models/User");
 const Hash = use("Hash");
 const Bank = use("App/Models/BankRegistration");
 const Banks = use("App/Models/Bank");
+const Database = use("Database");
 
 class AuthController {
   async index({ view, auth, response }) {
@@ -35,6 +36,12 @@ class AuthController {
     }
   }
 
+  async users({ view, response, session }) {
+    // fetch users from db
+    return await Database.select("*").from("users");
+    console.log(user.id);
+  }
+
   async login({ request, response, auth, session }) {
     const email = request.input("email");
     const password = request.input("password");
@@ -47,7 +54,7 @@ class AuthController {
     } catch (e) {
       console.log(e.message);
       session.flash({ type: "danger", message: "Invalid email or password" });
-      return response.redirect("/");
+      return response.redirect("/login");
     }
   }
 

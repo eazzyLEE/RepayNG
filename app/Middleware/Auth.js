@@ -7,7 +7,7 @@ class Auth {
       await auth.check();
       await next();
     } catch (error) {
-      return response.redirect("/");
+      return response.redirect("/logout");
     }
   }
 }

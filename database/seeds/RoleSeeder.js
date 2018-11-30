@@ -13,6 +13,7 @@
 const Factory = use("Factory");
 const Role = use("Role");
 const Database = use("Database");
+const User = use("App/Models/User")
 
 class RoleSeeder {
   async run() {
@@ -32,6 +33,8 @@ class RoleSeeder {
     roleUser.description = "user";
     await roleUser.save();
 
+    const user = await User.find(1);
+    await user.roles().attach([roleAdmin.id, roleUser.id]);
     await Database.raw("SET FOREIGN_KEY_CHECKS = 1;");
   }
 }

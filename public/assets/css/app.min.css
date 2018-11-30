@@ -14048,7 +14048,7 @@ header ul li {
 
 #about-intro .mission-vision-values {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 2fr 3fr 2fr;
 }
 
 @media (max-width: 767px) {
@@ -14058,7 +14058,7 @@ header ul li {
 }
 
 #about-intro .mission-vision-values aside {
-  padding: 50px;
+  padding: 30px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
