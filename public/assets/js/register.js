@@ -1090,12 +1090,12 @@ $(function() {
     cssClassStepActive: "active",
     cssClassStepDone: "done",
     onFinish: function() {
-      //alert("Wizard finished")
+      alert("Congratulations! You have successfully registered on our platform")
       const url = window.location.href;
       window.location =
         url
           .split("")
-          .splice(10, 8, "dashboard")
+          .splice(10, 0, "login")
           .join("");
     }
   });
